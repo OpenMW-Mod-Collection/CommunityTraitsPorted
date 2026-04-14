@@ -1,78 +1,4 @@
-local I = require("openmw.interfaces")
-local self = require("openmw.self")
-local core = require("openmw.core")
-
-local selfSkills = self.type.stats.skills
-local selfAttrs = self.type.stats.attributes
-
-local traitType = require("scripts.mtrCultures.utils.traitTypes").belief
-local skills = {
-    acrobatics  = selfSkills.acrobatics(self),
-    alchemy     = selfSkills.alchemy(self),
-    alteration  = selfSkills.alteration(self),
-    armorer     = selfSkills.armorer(self),
-    athletics   = selfSkills.athletics(self),
-    axe         = selfSkills.axe(self),
-    block       = selfSkills.block(self),
-    bluntWeapon = selfSkills.bluntweapon(self),
-    conjuration = selfSkills.conjuration(self),
-    destruction = selfSkills.destruction(self),
-    enchant     = selfSkills.enchant(self),
-    handToHand  = selfSkills.handtohand(self),
-    heavyArmor  = selfSkills.heavyarmor(self),
-    illusion    = selfSkills.illusion(self),
-    lightArmor  = selfSkills.lightarmor(self),
-    longBlade   = selfSkills.longblade(self),
-    marksman    = selfSkills.marksman(self),
-    mediumArmor = selfSkills.mediumarmor(self),
-    mercantile  = selfSkills.mercantile(self),
-    mysticism   = selfSkills.mysticism(self),
-    restoration = selfSkills.restoration(self),
-    security    = selfSkills.security(self),
-    shortBlade  = selfSkills.shortblade(self),
-    sneak       = selfSkills.sneak(self),
-    spear       = selfSkills.spear(self),
-    speechcraft = selfSkills.speechcraft(self),
-    unarmored   = selfSkills.unarmored(self),
-}
-local attrs = {
-    agility      = selfAttrs.agility(self),
-    endurance    = selfAttrs.endurance(self),
-    intelligence = selfAttrs.intelligence(self),
-    luck         = selfAttrs.luck(self),
-    personality  = selfAttrs.personality(self),
-    speed        = selfAttrs.intelligence(self),
-    strength     = selfAttrs.strength(self),
-    willpower    = selfAttrs.willpower(self),
-}
-local selfSpells = self.type.spells(self)
--- local races = {
---     -- vanilla
---     argonian     = "argonian",
---     breton       = "breton",
---     darkElf      = "dark elf",
---     ["dark elf"] = "dark elf",
---     dunmer       = "dark elf",
---     highElf      = "high elf",
---     ["high elf"] = "high elf",
---     altmer       = "high elf",
---     imperial     = "imperial",
---     khajiit      = "khajiit",
---     nord         = "nord",
---     orc          = "orc",
---     redguard     = "redguard",
---     woodElf      = "wood elf",
---     ["wood elf"] = "wood elf",
---     bosmer       = "wood elf",
---     -- TR
---     reachman     = "T_Sky_Reachman",
---     cathay       = "T_Els_Cathay",
---     cathayRaht   = "T_Els_Cathay-raht",
---     ohmes        = "T_Els_Ohmes",
---     ohmesRaht    = "T_Els_Ohmes-raht",
---     suthay       = "T_Els_Suthay",
--- }
-
+---@diagnostic disable: undefined-global
 I.CharacterTraits.addTrait {
     id = "akatosh",
     type = traitType,
@@ -203,19 +129,6 @@ I.CharacterTraits.addTrait {
         "Destruction and Conjuration magic. "
     ),
     doOnce = function()
-        selfSpells:add("MTR_ByTheDivines_Allmaker")
-
-        skills.axe.base = skills.axe.base - 5
-        skills.block.base = skills.block.base - 5
-        skills.bluntWeapon.base = skills.bluntWeapon.base - 5
-        skills.handToHand.base = skills.handToHand.base - 5
-        skills.longBlade.base = skills.longBlade.base - 5
-        skills.marksman.base = skills.marksman.base - 5
-        skills.shortBlade.base = skills.shortBlade.base - 5
-        skills.spear.base = skills.spear.base - 5
-
-        skills.destruction.base = 0
-        skills.conjuration.base = 0
     end,
     checkDisabled = function()
         return false
@@ -243,7 +156,7 @@ I.CharacterTraits.addTrait {
         selfSpells:add("MTR_ByTheDivines_AdversaryH")
         selfSpells:add("MTR_ByTheDivines_AdversaryG")
 
-        attrs.personality.base = attrs.personality.base - 15
+        attrs.personality.base        = attrs.personality.base - 15
         attrs.luck.base        = attrs.luck.base - 15
     end,
     checkDisabled = function()
@@ -475,7 +388,7 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_Clavicus")
 
-        attrs.luck.base = attrs.luck.base - 20
+        attrs.luck.base        = attrs.luck.base - 20
     end,
     checkDisabled = function()
         return false
@@ -501,7 +414,6 @@ I.CharacterTraits.addTrait {
         "together with Corprus upon consumption is given to followers of Dagoth Ur. "
     ),
     doOnce = function()
-        core.sendGlobalEvent("CharacterTraits_selectedDagotUr", self)
     end,
     checkDisabled = function()
         return false
@@ -617,19 +529,7 @@ I.CharacterTraits.addTrait {
     id = "hoonding",
     type = traitType,
     name = "HoonDing",
-    description = (
-        "The Make Way God - Yokudan spirit of 'perseverance over infidels'. The HoonDing has historically " ..
-        "materialized whenever the Redguards need to 'make way' for their people. In Tamrielic history this " ..
-        "has only happened three times -- twice in the first era during the Ra Gada invasion and once " ..
-        "during the Tiber War. In this last incarnation, the HoonDing was said to have been either a sword " ..
-        "or a crown, or both. " ..
-        "\n" ..
-        "\n" ..
-        "HoonDing is usually venerated by Redguards. " ..
-        "\n" ..
-        "\n" ..
-        "Bonus to Attack (+10) is bestowed upon followers of HoonDing."
-    ),
+    description = (""),
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_HoonDing")
     end,
@@ -682,7 +582,7 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_Jhunal")
 
-        attrs.personality.base = attrs.personality.base - 5
+        attrs.personality.base        = attrs.personality.base - 5
     end,
     checkDisabled = function()
         return false
@@ -923,7 +823,7 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_Sheor")
 
-        attrs.luck.base = attrs.luck.base - 5
+        attrs.luck.base        = attrs.luck.base - 5
     end,
     checkDisabled = function()
         return false
@@ -961,22 +861,7 @@ I.CharacterTraits.addTrait {
     id = "lorkhan",
     type = traitType,
     name = "Lorkhan",
-    description = (
-        "The Missing God - This Creator-Trickster-Tester deity is in every Tamrielic mythic tradition. " ..
-        "His most popular name is the Aldmeri 'Lorkhan', or Doom Drum. He convinced or contrived the " ..
-        "Original Spirits to bring about the creation of the mortal plane, upsetting the status quo -- " ..
-        "much like his father Padomay had introduced instability into the universe in the Beginning Place. " ..
-        "After the world is materialized, Lorkhan is separated from his divine center, sometimes " ..
-        "involuntarily, and wanders the creation of the et'Ada. He and his metaphysical placement in the " ..
-        "'scheme of things' is interpreted a variety of ways. In Morrowind, for example, he is a being " ..
-        "related to the Psijiic Endeavor, a process by which mortals are charged with transcending the " ..
-        "gods that created them. To the High Elves, he is the most unholy of all higher powers, as he " ..
-        "forever broke their connection to the spirit plane. In the legends, he is almost always an enemy " ..
-        "of the Aldmer and, therefore, a hero of early Mankind. Khajiits know him as Lorkhaj. " ..
-        "\n" ..
-        "\n" ..
-        "Bonus to Maximum Magicka (10%) is bestowed upon followers of Lorkhan."
-    ),
+    description = (""),
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_Lorkhan")
     end,
@@ -1317,7 +1202,7 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_Namira")
 
-        attrs.personality.base = attrs.personality.base - 10
+        attrs.personality.base        = attrs.personality.base - 10
     end,
     checkDisabled = function()
         return false
@@ -1454,7 +1339,7 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_Phynaster")
 
-        attrs.speed.base = attrs.speed.base - 10
+        attrs.speed.base        = attrs.speed.base - 10
     end,
     checkDisabled = function()
         return false
@@ -1555,7 +1440,7 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_Ruptga")
 
-        attrs.luck.base = attrs.luck.base - 10
+        attrs.luck.base        = attrs.luck.base - 10
     end,
     checkDisabled = function()
         return false
@@ -1577,7 +1462,7 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_Sanguine")
 
-        attrs.intelligence.base = attrs.intelligence.base - 10
+        attrs.intelligence.base        = attrs.intelligence.base - 10
     end,
     checkDisabled = function()
         return false
@@ -1629,21 +1514,6 @@ I.CharacterTraits.addTrait {
         "Sheogorath, but they suffer from Madness and penalty to random Attributes. "
     ),
     doOnce = function()
-		local madC = math.random(-5, 5)
-		local madM = math.random(-5, 5)
-		local madT = math.random(-5, 5)
-		local madB = math.random(-5, 5)
-
-        attrs.strength.base = attrs.strength.base + (madC - madB)
-        attrs.endurance.base = attrs.endurance.base + (-madC - madC)
-        attrs.intelligence.base = attrs.intelligence.base + (madC - madB)
-        attrs.willpower.base = attrs.willpower.base + (-madM + madB)
-        attrs.agility.base = attrs.agility.base + (madT + madC)
-        attrs.speed.base = attrs.speed.base + (-madT - madT)
-        attrs.personality.base = attrs.personality.base + (madB + madT)
-        attrs.luck.base = attrs.luck.base + (-madB - madM)
-
-        selfSpells:add("MTR_ByTheDivines_Sheogorath")
     end,
     checkDisabled = function()
         return false
@@ -1690,7 +1560,6 @@ I.CharacterTraits.addTrait {
         "Stendarr. "
     ),
     doOnce = function()
-        selfSpells:add("MTR_ByTheDivines_Stendarr")
     end,
     checkDisabled = function()
         return false
@@ -1711,7 +1580,6 @@ I.CharacterTraits.addTrait {
         "Bonus to Unarmored (+10) and Personality (+5) is bestowed upon followers of S'rendarr. "
     ),
     doOnce = function()
-        selfSpells:add("MTR_ByTheDivines_Srendarr")
     end,
     checkDisabled = function()
         return false
@@ -2008,7 +1876,7 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_Mannimarco")
 
-        attrs.personality.base = attrs.personality.base - 5
+        attrs.personality.base        = attrs.personality.base - 5
     end,
     checkDisabled = function()
         return false
@@ -2074,22 +1942,11 @@ I.CharacterTraits.addTrait {
     id = "theoldways",
     type = traitType,
     name = "The Old Ways",
-    description = (
-        "Student of The Old Ways recognizes that so-called gods are no more than the spirits of " ..
-        "superior men and women whose power and passion granted them great influence in the afterworld. " ..
-        "Faithful to The Old Ways know it is essential always to remember the spiritual world while " ..
-        "keeping eyes open in the physical one. A student of The Old Ways may indeed ally himself " ..
-        "to a lord -- but it is a risky relationship. Individuals following The Old Ways are sometimes " ..
-        "euphemistically called worshippers of The Gods of Reason and Logic. " ..
-        "\n" ..
-        "\n" ..
-        "Bonus to Intelligence (+20) is bestowed upon followers of The Old Ways, but they suffer penalty " ..
-        "to Personality (-5) and Luck (-5)"
-    ),
+    description = (""),
     doOnce = function()
         selfSpells:add("MTR_ByTheDivines_OldWays")
 
-        attrs.personality.base = attrs.personality.base - 5
+        attrs.personality.base        = attrs.personality.base - 5
         attrs.luck.base        = attrs.luck.base - 5
     end,
     checkDisabled = function()

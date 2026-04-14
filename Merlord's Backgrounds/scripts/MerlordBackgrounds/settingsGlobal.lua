@@ -25,7 +25,7 @@ I.Settings.registerGroup {
             name = 'bountyLimit_name',
             description = 'bountyLimit_desc',
             renderer = 'number',
-            default = 750,
+            default = 300,
         },
         {
             key = 'minInterval',

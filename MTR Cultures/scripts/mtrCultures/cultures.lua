@@ -82,41 +82,6 @@ I.CharacterTraits.addTrait {
     type = traitType,
     name = "Agrun Ornim",
     description = (
-        "Agrun Ornim - 'Deep Orcs' - are Orsimer living in the ancient Dwemer " ..
-        "strongholds of Rourken clan in Hammerfell. They adopted Dwemer fashion and wear " ..
-        "stylized beard and hairstyles of the long extinct Dwarves. More superstitious " ..
-        "inhabitants of neighbouring areas even started believing that Dwemer never disappeared, " ..
-        "but were instead turned into Orsimer as punishment for questioning the Divines.\n" ..
-        "\n" ..
-        "Requirements: Orcs only.\n" ..
-        "\n" ..
-        "+0.5x Max Magicka\n" ..
-        "+5 Intelligence, Armorer, Long Blade, Enchant, Spear, Alteration, Illusion\n" ..
-        "-5 Speed, Agility, Axe, Block, Medium Armor, Alchemy, Conjuration, Mysticism"
-    ),
-    doOnce = function()
-        selfSpells:add("mtrCultures_Agrunornim")
-
-        attrs.speed.base        = attrs.speed.base - 5
-        attrs.agility.base      = attrs.agility.base - 5
-
-        skills.axe.base         = skills.axe.base - 5
-        skills.block.base       = skills.block.base - 5
-        skills.mediumArmor.base = skills.mediumArmor.base - 5
-        skills.alchemy.base     = skills.alchemy.base - 5
-        skills.conjuration.base = skills.conjuration.base - 5
-        skills.mysticism.base   = skills.mysticism.base - 5
-    end,
-    checkDisabled = function()
-        return getRaceId(self) ~= races.orc
-    end
-}
-
-I.CharacterTraits.addTrait {
-    id = "agrunornim",
-    type = traitType,
-    name = "Agrun Ornim",
-    description = (
         "Agrun Ornim - 'Deep Orcs' - are Orsimer living in the ancient Dwemer strongholds of " ..
         "Rourken clan in Hammerfell. They adopted Dwemer fashion and wear stylized beard and " ..
         "hairstyles of the long extinct Dwarves. More superstitious inhabitants of neighbouring " ..

@@ -1,4 +1,4 @@
-local U = require("scripts.CharacterTraits.builtinTraits.utils.utils")
+local U = require("scripts.MerlordBackgrounds.utils.utils")
 
 local folderPath = "scripts/MerlordBackgrounds/backgrounds_player/"
 

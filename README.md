@@ -1,55 +1,40 @@
 # Community Traits Ported (OpenMW)
 
-Select your character's background that will shape his future.
+Select your character's past that will shape his future.
 
-This mod adds a new chargen options alongside the existing ones: your character's background, belief, lineage and culture. All of them can range from simple stat changes to scripted events that completely alter the way you play the game.
+This is an effort to port some community-made traits based on [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) or MTR's mods.
 
-Builtin traits include (with minor changes for the sake of balance):
+## Traits
+
+Currently ported trait packs:
 
 - [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) by Merlord
 - [mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031) by MTR
 - [mtrLineage](https://www.nexusmods.com/morrowind/mods/49996) by MTR
 - [mtrCultures](https://www.nexusmods.com/morrowind/mods/51282) by MTR
 
-To give you a general idea, Character Backrounds tend to be more scripted, while MTR's traits are mostly stat changes and abilities. Also, they all are optional.
+### My Personal Changes
 
-> Note: Any expansions created for the MWSE version of Character Backgrounds are not compatible with this mod and must be adapted to the OpenMW Lua API.
+They are reduced to a minimum and either are aimed at better balancing or dictated by engine limitations / my unwillingness to abuse the API.
 
-## Adding your own Traits
+**Merlord's Character Backgrounds > Artificer**  
 
-New traits are created in player scripts using `I.CharacterTraitsFramework.addTrait()`. New trait types are registered automatically based on their `type` field.
+> +50 Enchant -> +20 Enchant
 
-Example:
+Even though disabled spells is quite a heavy hindrance, at at high skill levels Enchant becomes objectively more powerful than any school of magic due to charge discount.
 
-```lua
-local I = require("openmw.interfaces")
-local self = require("openmw.self")
-local ui = require("openmw.ui")
+**Merlord's Character Backgrounds > Framed**
 
-I.CharacterTraits.addTrait {
-    id = "test",
-    type = "background",
-    name = "Test Background",
-    description = "This background does this, this, and that.",
+> Initial bounty delay: 1 hour -> 1-24 hours
+> Bounty interval: 1-4 days -> 2-6 days
 
-    doOnce = function()
-        -- Called only once when the trait is activated
-        local strength = self.type.stats.attributes.strength(self)
-        strength.base = strength.base + 15
-    end,
-
-    callback = function(data)
-        -- Called when the trait is activated and during script initialization
-        ui.showMessage("Test background successfully initialized!")
-    end
-}
-```
+Initial bounty delay was increased and randomized to both give player more wiggle room at the start and make it more sudden (at default 30 timescale, 1 in-game day = 48 irl minutes). Bounty interval since Merlord in his version skips bounty if player is in combat at the time of checking. While this can be implemented in OpenMW in a roundabout way, I figured it would be easier to just pump the numbers up a bit.
 
 ## Installation
 
 ### Requirements
 
-- [Stats Window Extender (OpenMW)](https://www.nexusmods.com/morrowind/mods/57727) by Ralts
+- Character Traits Framework by me
 
 ### Load Order
 
@@ -68,18 +53,7 @@ Compatible with any mods.
 
 Safe to install or update mid-playthrough. Removing the mod, though, might not revert all effects of the picked traits.
 
-### Soft Incompatibilities
-
-Nothing gamebreaking, just a little whacky behavior.
-
-- [OpenMW Daggerfall Character Creation](https://www.nexusmods.com/morrowind/mods/58464) by Slowchu - After chargen both UIs fire at the same time and one will temporarily cover the other
-
 ## Credits
 
-**Sosnoviy Bor** - Author  
-**Greatness7** - Scrollable list template ([Virtual List](https://github.com/Greatness7/openmw_virtual_list/tree/main))  
-**Ralts** - Button template ([Magic Window Extender](https://www.nexusmods.com/morrowind/mods/58064))  
-**Merlord** - Design, inspiration and traits ([Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795))  
-**MTR** - Design, inspiration and traits ([mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031), [mtrLineage](https://www.nexusmods.com/morrowind/mods/49996) and [mtrCultures](https://www.nexusmods.com/morrowind/mods/51282))  
-**ownlyme, hyacinth and urm** - Invaluable help with figuring out the UI API  
-**You, the community** - Inspiring to start and continue modding
+**Sosnoviy Bor** - Trait porting
+**Merlord, MTR** - Making the traits I've ported
