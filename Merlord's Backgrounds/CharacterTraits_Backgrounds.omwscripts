@@ -1,0 +1,5 @@
+PLAYER: scripts/MerlordBackgrounds/player.lua
+GLOBAL: scripts/MerlordBackgrounds/global.lua
+
+MENU: scripts/MerlordBackgrounds/settingsMenu.lua
+GLOBAL: scripts/MerlordBackgrounds/settingsGlobal.lua

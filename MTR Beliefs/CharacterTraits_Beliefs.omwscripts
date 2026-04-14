@@ -1,0 +1,2 @@
+PLAYER: scripts/mtrBeliefs/beliefs_player.lua
+GLOBAL: scripts/mtrBeliefs/beliefs_global.lua
