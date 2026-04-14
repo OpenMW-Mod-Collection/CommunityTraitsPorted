@@ -1,7 +1,7 @@
 ## Port all the og backgrounds
 
 - [x] Agoraphobia
-- [x] Artificer
+- [x] Artificer    [missing spell effect]
 - [x] Apprenticed to a Blacksmith
 - [ ] Blood of the Dremora    (sleep encounter)
 - [x] Bodybuilder
@@ -24,7 +24,7 @@
 - [ ] Rat King    [Fucking hard]
 - [x] Apprenticed to a Shopkeeper
 - [x] Small Frame
-- [ ] Star Child
+- [x] Star Child
 - [x] Tracker    [missing spell effect]
 - [x] Street Urchin
 
