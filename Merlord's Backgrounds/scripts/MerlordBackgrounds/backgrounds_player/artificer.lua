@@ -48,7 +48,7 @@ I.CharacterTraits.addTrait {
 
             local activeSpells = self.type.activeSpells(self)
             activeSpells:add {
-                id = "background_artificer",
+                id = "mer_bg_artificer",
                 ---@diagnostic disable-next-line: assign-type-mismatch
                 effects = { 0 },
                 ignoreResistances = true,

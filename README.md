@@ -35,11 +35,24 @@ Initial bounty delay was increased and randomized to both give player more wiggl
 
 Merlord in his version skips adding bounty if the player is in combat at the time of checking. While this can be implemented in OpenMW in a roundabout way, I figured it would be easier to just pump the numbers up a bit. and not jump through the multiple hoops for this inconsequential change.
 
+**Merlord's Character Backgrounds > Blood of the Dremora, Escaped Slave, Famed Warrior**
+
+> Scripted enemies will spawn randomly behind the player instead of as sleep encounters.
+
+I have multiple reasons for this change:
+
+a. OpenMW Lua API doesn't have any way to **reliably** check if player is sleeping. If the logic for it is dependent on `Auto-save when Rest` setting specifically being ON, I would prefer to avoid that entirely  
+1) While the "kill the target when it expects the least" reasoning can be far-fetched for random animals or assasin organization, it doesn't sit right for me in terms of slavers, rivals and daedra  
+III - I like it being more unexpected. Fight me
+
+And besides, limit on their spawn frequency is still the same.
+
 ## Installation
 
 ### Requirements
 
 - Character Traits Framework by me
+- [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042) by OAAB_Data Team - for Merlord's Character Backgrounds
 
 ### Load Order
 

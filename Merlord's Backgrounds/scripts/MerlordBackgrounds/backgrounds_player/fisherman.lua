@@ -29,15 +29,7 @@ I.CharacterTraits.addTrait {
         local shortBlade = self.type.stats.skills.shortblade(self)
         shortBlade.base = shortBlade.base + 5
 
-        local activeSpells = self.type.activeSpells(self)
-        activeSpells:add {
-            id = "background_fisherman",
-            ---@diagnostic disable-next-line: assign-type-mismatch
-            effects = { 0 },
-            ignoreResistances = true,
-            ignoreSpellAbsorption = true,
-            ignoreReflect = true,
-            quiet = true,
-        }
+        local spells = self.type.spells(self)
+        spells:add("mer_bg_fisher_feet")
     end,
 }

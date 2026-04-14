@@ -20,9 +20,35 @@ local function multScale(data)
     data.obj:setScale(data.obj.scale * data.mult)
 end
 
+local function safeSpawn(data)
+    local actor = world.createObject(data.actor)
+    actor:teleport(data.player.cell, data.pos)
+    actor:addScript(
+        data.script,
+        {
+            player = data.player,
+            script = data.script,
+        }
+    )
+end
+
+local function onScriptedActorDeath(data)
+    if data.script then
+        data.actor:removeScript(data.script)
+    end
+
+    if data.clearInventory then
+        for _, item in ipairs(data.actor.type.inventory(data.actor):getAll()) do
+            item:remove()
+        end
+    end
+end
+
 return {
     eventHandlers = {
         CharacterTraits_multScale = multScale,
         CharacterTraits_addItems = addItems,
+        CharacterTraits_safeSpawn = safeSpawn,
+        CharacterTraits_onScriptedActorDeath = onScriptedActorDeath,
     }
 }
