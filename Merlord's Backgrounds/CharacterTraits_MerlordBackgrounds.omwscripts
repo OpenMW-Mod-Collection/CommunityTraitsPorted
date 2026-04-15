@@ -1,9 +1,17 @@
+# Merged traits
+# If the trait doesn't have any engine handlers that return values, it can be merged
 PLAYER: scripts/MerlordBackgrounds/player.lua
 GLOBAL: scripts/MerlordBackgrounds/global.lua
 
+# Non-merged traits
+PLAYER: scripts/MerlordBackgrounds/backgrounds_player/bloodOfDremora.lua
+PLAYER: scripts/MerlordBackgrounds/backgrounds_player/escapedSlave.lua
+PLAYER: scripts/MerlordBackgrounds/backgrounds_player/famedWarrior.lua
+PLAYER: scripts/MerlordBackgrounds/backgrounds_player/nightMage.lua
+PLAYER: scripts/MerlordBackgrounds/backgrounds_player/ratKing.lua
+
 CUSTOM: scripts/MerlordBackgrounds/backgrounds_custom/bloodOfDremora.lua
-CUSTOM: scripts/MerlordBackgrounds/backgrounds_custom/escapedSlave.lua
-CUSTOM: scripts/MerlordBackgrounds/backgrounds_custom/ratKing.lua
+CUSTOM: scripts/MerlordBackgrounds/backgrounds_custom/famedWarrior.lua
 
 MENU: scripts/MerlordBackgrounds/settingsMenu.lua
 GLOBAL: scripts/MerlordBackgrounds/settingsGlobal.lua
