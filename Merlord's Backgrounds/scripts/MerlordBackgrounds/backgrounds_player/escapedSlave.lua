@@ -9,7 +9,7 @@ local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").backgro
 local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
 
 local period = time.minute
-local slaversKilled = 0
+local slaversSpawned = 0
 local timerStarted = false
 local minDelay = 1 * time.hour
 local maxDelay = 7 * time.day -- why such a long delay? so it would be sudden, ofc
@@ -32,22 +32,22 @@ local spawnSlaver = async:registerTimerCallback(
             "CharacterTraits_safeSpawn",
             {
                 player = self,
-                actor = slavers[slaversKilled + 1],
-                script = "scripts/MerlordBackgrounds/backgrounds_custom/escapedSlave.lua",
+                actor = slavers[slaversSpawned + 1],
                 pos = raycast.findSafeSpawnPos(self, spawnDistance)
             }
         )
-        timerStarted = true
+        timerStarted = false
+        slaversSpawned = slaversSpawned + 1
     end
 )
 
 local function checkLevel()
-    if slaversKilled > #slavers then
+    if slaversSpawned > #slavers then
         stopTimer()
         return
     end
 
-    local readyForSlaver = self.type.stats.level(self).current > slaversKilled
+    local readyForSlaver = self.type.stats.level(self).current > slaversSpawned
     if not readyForSlaver or timerStarted then return end
 
     async:newGameTimer(
@@ -70,8 +70,17 @@ I.CharacterTraits.addTrait {
     ),
     checkDisabled = function()
         ---@diagnostic disable-next-line: undefined-field
-        local race = self.type.records[self.recordId].race
-        return race ~= "argonian" and race ~= "khajiit"
+        local playerRace = self.type.records[self.recordId].race
+        local slaveRaces = {
+            ["argonian"] = true,
+            ["khajiit"] = true,
+            ["t_els_cathay"] = true,
+            ["t_els_cathay-raht"] = true,
+            ["t_els_ohmes"] = true,
+            ["t_els_ohmes-raht"] = true,
+            ["t_els_suthay"] = true,
+        }
+        return not slaveRaces[playerRace]
     end,
     doOnce = function()
         core.sendGlobalEvent(
@@ -97,21 +106,17 @@ I.CharacterTraits.addTrait {
     end,
 }
 
-local function slaverDied()
-    slaversKilled = slaversKilled + 1
-end
-
 local function onSave()
     return {
-        dremorasKilled = slaversKilled,
+        slaversSpawned = slaversSpawned,
         timerStarted = timerStarted,
     }
 end
 
 local function onLoad(data)
     if not data then return end
-    slaversKilled = data.dremorasKilled or slaversKilled
-    timerStarted = data.dremoraTimerStarted or timerStarted
+    slaversSpawned = data.slaversSpawned or slaversSpawned
+    timerStarted = data.timerStarted or timerStarted
 end
 
 return {
@@ -119,7 +124,4 @@ return {
         onSave = onSave,
         onLoad = onLoad
     },
-    eventHandlers = {
-        CharacterTraits_slaverDied = slaverDied,
-    }
 }

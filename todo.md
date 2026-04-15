@@ -3,13 +3,13 @@
 - [x] Agoraphobia
 - [x] Artificer
 - [x] Apprenticed to a Blacksmith
-- [x] Blood of the Dremora <- done, but needs testing
+- [x] Blood of the Dremora
 - [x] Bodybuilder
 - [x] Brute
 - [x] Bully
 - [x] Child of Nature
-- [x] Escaped Slave <- done, but needs testing
-- [ ] Famed Warrior    (sleep encounter)
+- [x] Escaped Slave
+- [ ] Famed Warrior
 - [x] Fencing Master
 - [x] Raised in a Fishing Village
 - [x] Framed
@@ -21,7 +21,7 @@
 - [x] Night Mage
 - [x] Adopted by Nobles
 - [x] Pacifist
-- [ ] Rat King    [Fucking hard]
+- [x] Rat King
 - [x] Apprenticed to a Shopkeeper
 - [x] Small Frame
 - [x] Star Child

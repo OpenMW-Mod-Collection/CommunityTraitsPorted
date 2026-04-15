@@ -64,17 +64,30 @@ local races = {
     ["wood elf"] = "wood elf",
     bosmer       = "wood elf",
     -- TR
-    reachman     = "T_Sky_Reachman",
-    cathay       = "T_Els_Cathay",
-    cathayRaht   = "T_Els_Cathay-raht",
-    ohmes        = "T_Els_Ohmes",
-    ohmesRaht    = "T_Els_Ohmes-raht",
-    suthay       = "T_Els_Suthay",
+    reachman     = "t_sky_reachman",
+    cathay       = "t_els_cathay",
+    cathayRaht   = "t_els_cathay-raht",
+    ohmes        = "t_els_ohmes",
+    ohmesRaht    = "t_els_ohmes-raht",
+    suthay       = "t_els_suthay",
 }
 
-local function getRaceId(npc)
+local function getRaceId(player)
     ---@diagnostic disable-next-line: undefined-field
-    return npc.type.records[npc.recordId].race
+    return player.type.records[player.recordId].race
+end
+
+local function isKhajiit(player)
+    local playerRace = player.type.records[player.recordId].race
+    local khajiitRaces = {
+        ["khajiit"] = true,
+        ["t_els_cathay"] = true,
+        ["t_els_cathay-raht"] = true,
+        ["t_els_ohmes"] = true,
+        ["t_els_ohmes-raht"] = true,
+        ["t_els_suthay"] = true,
+    }
+    return khajiitRaces[playerRace]
 end
 
 I.CharacterTraits.addTrait {
@@ -1544,15 +1557,7 @@ I.CharacterTraits.addTrait {
         skills.unarmored.base  = skills.unarmored.base - 5
     end,
     checkDisabled = function()
-        local playerRace = getRaceId(self)
-        return not (
-            playerRace == races.khajiit
-            or playerRace == races.cathay
-            or playerRace == races.cathayRaht
-            or playerRace == races.ohmes
-            or playerRace == races.ohmesRaht
-            or playerRace == races.suthay
-        )
+        return not isKhajiit(self)
     end
 }
 
@@ -1584,15 +1589,7 @@ I.CharacterTraits.addTrait {
         skills.mercantile.base  = skills.mercantile.base - 5
     end,
     checkDisabled = function()
-        local playerRace = getRaceId(self)
-        return not (
-            playerRace == races.khajiit
-            or playerRace == races.cathay
-            or playerRace == races.cathayRaht
-            or playerRace == races.ohmes
-            or playerRace == races.ohmesRaht
-            or playerRace == races.suthay
-        )
+        return not isKhajiit(self)
     end
 }
 
@@ -1624,15 +1621,7 @@ I.CharacterTraits.addTrait {
         skills.longBlade.base   = skills.longBlade.base - 5
     end,
     checkDisabled = function()
-        local playerRace = getRaceId(self)
-        return not (
-            playerRace == races.khajiit
-            or playerRace == races.cathay
-            or playerRace == races.cathayRaht
-            or playerRace == races.ohmes
-            or playerRace == races.ohmesRaht
-            or playerRace == races.suthay
-        )
+        return not isKhajiit(self)
     end
 }
 
@@ -1654,15 +1643,7 @@ I.CharacterTraits.addTrait {
         selfSpells:add("mtrCultures_Baandari")
     end,
     checkDisabled = function()
-        local playerRace = getRaceId(self)
-        return not (
-            playerRace == races.khajiit
-            or playerRace == races.cathay
-            or playerRace == races.cathayRaht
-            or playerRace == races.ohmes
-            or playerRace == races.ohmesRaht
-            or playerRace == races.suthay
-        )
+        return not isKhajiit(self)
     end
 }
 
@@ -1689,16 +1670,7 @@ I.CharacterTraits.addTrait {
         skills.axe.base         = skills.axe.base - 5
     end,
     checkDisabled = function()
-        local playerRace = getRaceId(self)
-        return not (
-            playerRace == races.imperial
-            or playerRace == races.khajiit
-            or playerRace == races.cathay
-            or playerRace == races.cathayRaht
-            or playerRace == races.ohmes
-            or playerRace == races.ohmesRaht
-            or playerRace == races.suthay
-        )
+        return not isKhajiit(self)
     end
 }
 

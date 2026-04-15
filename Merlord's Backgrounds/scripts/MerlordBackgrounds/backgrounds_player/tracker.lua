@@ -43,7 +43,7 @@ I.CharacterTraits.addTrait {
         "\n" ..
         "> When outside in wilderness:\n" ..
         "+10 Speed\n" ..
-        "+100pt Detect Animal ability"
+        "+100 pts Detect Animal ability"
     ),
     doOnce = function()
         if inWild then

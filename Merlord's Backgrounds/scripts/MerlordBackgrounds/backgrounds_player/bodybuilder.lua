@@ -33,9 +33,8 @@ I.CharacterTraits.addTrait {
         "Unfortunately, your body is the most interesting thing about you, and when not " ..
         "mesmerized by your good looks, people quickly realize how boring you are.\n" ..
         "\n" ..
-        "+10 Personality when your abs are visible\n" ..
-        "-10 Perosnality otherwise\n" ..
-        "(e.g. 20 point difference)"
+        "+10 Personality when your chest is visible\n" ..
+        "-10 Perosnality otherwise"
     ),
     doOnce = function()
         updateAllStats(10)

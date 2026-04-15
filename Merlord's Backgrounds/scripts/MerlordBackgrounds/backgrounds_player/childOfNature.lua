@@ -36,8 +36,7 @@ I.CharacterTraits.addTrait {
         "You feel most at home out in the wilderness, as far from other people as possible.\n" ..
         "\n" ..
         "+5 to all skills while outdoors in the wild\n" ..
-        "-5 to all skills while in civilization or indoors\n" ..
-        "(e.g. 10 point difference)"
+        "-5 to all skills while in civilization or indoors"
     ),
     doOnce = function()
         updateAllStats(5)

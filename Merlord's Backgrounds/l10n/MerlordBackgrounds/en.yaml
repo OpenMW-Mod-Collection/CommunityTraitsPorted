@@ -4,7 +4,8 @@ page_description: Settings for Merlord's Backgrounds.
 framed_groupName: Framed
 minBounty_name: Min Added Bounty
 maxBounty_name: Max Added Bounty
-bountyLimit_name: |
+bountyLimit_name: Bounty Limit
+bountyLimit_desc: |
   Max bounty at which the background stops adding you more bounty. It's not a cap, though.
 
   Note: in vanilla at 1000 bounty guards confront you on sight and at 5000 bounty attack on sight.
@@ -17,3 +18,10 @@ forceSunsDusk_desc: |
   Does nothing if Sun's Dusk is not installed.
 
   If disabled, when Sun's Dusk doesn't recognize an ingredient as "green pact safe" by its metrics, the mod will additionally check the falloff table and names.
+
+ratKing_groupName: Rat King
+spawnCooldown_name: Rat Hordes Cooldown (in-game hours)
+spawnChance_name: Horde Chance (%)
+spawnChance_desc: The chance is rolled for every individual aggressive actor.
+minSpawn_name: Minimum Rats in a Horde
+maxSpawn_name: Maximum Rats in a Horde

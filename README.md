@@ -8,9 +8,20 @@ This is an effort to port some community-made traits based on [Merlord's Charact
 
 Currently ported trait packs:
 
+**Backgrounds**
+
 - [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) by Merlord
+
+**Beliefs**
+
 - [mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031) by MTR
+
+**Lineages**
+
 - [mtrLineage](https://www.nexusmods.com/morrowind/mods/49996) by MTR
+
+**Cultures**
+
 - [mtrCultures](https://www.nexusmods.com/morrowind/mods/51282) by MTR
 
 I'm not listing every single one of them (bro, there's 250+ of them here), so for info check individual mod pages instead.
@@ -33,19 +44,34 @@ Initial bounty delay was increased and randomized to both give player more wiggl
 
 > Bounty interval: 1-4 days -> 2-6 days
 
-Merlord in his version skips adding bounty if the player is in combat at the time of checking. While this can be implemented in OpenMW in a roundabout way, I figured it would be easier to just pump the numbers up a bit. and not jump through the multiple hoops for this inconsequential change.
+Merlord in his version skips adding bounty if the player is in combat at the time of checking. While this can be implemented in OpenMW in a roundabout way, I figured it would be easier to just pump the numbers up a bit and not jump through the multiple hoops for this inconsequential change.
 
-**Merlord's Character Backgrounds > Blood of the Dremora, Escaped Slave, Famed Warrior**
+**Merlord's Character Backgrounds > Blood of the Dremora**  
+**Merlord's Character Backgrounds > Escaped Slave**  
+**Merlord's Character Backgrounds > Famed Warrior**
 
 > Scripted enemies will spawn randomly behind the player instead of as sleep encounters.
 
 I have multiple reasons for this change:
 
-a. OpenMW Lua API doesn't have any way to **reliably** check if player is sleeping. If the logic for it is dependent on `Auto-save when Rest` setting specifically being ON, I would prefer to avoid that entirely  
-1) While the "kill the target when it expects the least" reasoning can be far-fetched for random animals or assasin organization, it doesn't sit right for me in terms of slavers, rivals and daedra  
-III - I like it being more unexpected. Fight me
+- OpenMW Lua API doesn't have any way to **reliably** check if player is sleeping. If the logic for it is dependent on `Auto-save when Rest` setting specifically being ON, I would prefer to avoid that entirely
+- While the "kill the target when it expects the least" reasoning can be far-fetched for random animals or assasin organization, it doesn't sit right for me in terms of slavers, rivals and daedra
+- I like it being more unexpected. Fight me
 
 And besides, limit on their spawn frequency is still the same.
+
+**Merlord's Character Backgrounds > Blood of the Dremora**
+
+> Magic skills raised by killing a dremora don't conribute to your level progress.
+
+It's actually the same as in Merlord's mod, but I figured I should mention it just in case. Yes, this is intentional, because otherwise you could get up to 8 major/minor skill ups for free every other level just by picking the right class.
+
+**Merlord's Character Backgrounds > Escaped Slave**  
+**MTR's Lineages > Khajiit**
+
+> Added Tamriel_Data khajiit races to the trait requirements whitelist.
+
+Self-explanatory, I presume?
 
 ## Installation
 
@@ -71,7 +97,15 @@ Compatible with any mods.
 
 Safe to install or update mid-playthrough. Removing the mod, though, might not revert all effects of the picked traits.
 
+## Recommended Mods
+
+- [Pretty Stats](https://www.nexusmods.com/morrowind/mods/58304) by ownlyme
+- [HUDMarkers](https://www.nexusmods.com/morrowind/mods/57112) by ownlyme
+- [Attend Me](https://www.nexusmods.com/morrowind/mods/51232) by urm
+- [Jammings off](https://www.nexusmods.com/morrowind/mods/44523) by SymphonyTeam
+- [Paxon the Pack Rat](https://www.nexusmods.com/morrowind/mods/45669) by Tizzo
+
 ## Credits
 
-**Sosnoviy Bor** - Trait porting
+**Sosnoviy Bor** - Trait porting  
 **Merlord, MTR** - Making the origianl traits

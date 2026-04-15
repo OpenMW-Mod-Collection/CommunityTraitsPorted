@@ -59,3 +59,39 @@ I.Settings.registerGroup {
         },
     }
 }
+
+I.Settings.registerGroup {
+    key = 'SettingsMerlordBackgrounds_ratKing',
+    page = 'MerlordBackgrounds',
+    l10n = 'MerlordBackgrounds',
+    name = 'ratKing_groupName',
+    permanentStorage = true,
+    order = 1,
+    settings = {
+        {
+            key = 'spawnCooldown',
+            name = 'spawnCooldown_name',
+            renderer = 'number',
+            default = 12,
+        },
+        {
+            key = 'spawnChance',
+            name = 'spawnChance_name',
+            description = "spawnChance_desc",
+            renderer = 'number',
+            default = 10,
+        },
+        {
+            key = 'minSpawn',
+            name = 'minSpawn_name',
+            renderer = 'number',
+            default = 3,
+        },
+        {
+            key = 'maxSpawn',
+            name = 'maxSpawn_name',
+            renderer = 'number',
+            default = 5,
+        },
+    }
+}

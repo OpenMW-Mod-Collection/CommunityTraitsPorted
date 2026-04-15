@@ -38,10 +38,8 @@ I.CharacterTraits.addTrait {
     description = (
         "You were born with a magickal aptitude that has affinity for the night.\n" ..
         "\n" ..
-        "> During the night (18:00-6:00)\n" ..
-        "+20% Intelligence\n" ..
-        "> During the day:\n" ..
-        "-20% Intelligence"
+        "+20% Intelligence during the night (18:00-6:00)\n" ..
+        "-20% Intelligence during the day"
     ),
     doOnce = function()
         changeStats()

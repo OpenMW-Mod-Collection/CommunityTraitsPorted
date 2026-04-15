@@ -23,13 +23,15 @@ end
 local function safeSpawn(data)
     local actor = world.createObject(data.actor)
     actor:teleport(data.player.cell, data.pos)
-    actor:addScript(
-        data.script,
-        {
-            player = data.player,
-            script = data.script,
-        }
-    )
+    if data.script then
+        actor:addScript(
+            data.script,
+            {
+                player = data.player,
+                script = data.script,
+            }
+        )
+    end
 end
 
 local function onScriptedActorDeath(data)

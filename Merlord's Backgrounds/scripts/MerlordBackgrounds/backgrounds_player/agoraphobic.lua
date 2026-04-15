@@ -33,8 +33,7 @@ I.CharacterTraits.addTrait {
         "You are terrified of open spaces. You feel helpless when outdoors, but gain confidence back when indoors.\n" ..
         "\n" ..
         "+5 to all skills while indoors\n" ..
-        "-5 to all skills while outdoors\n" ..
-        "(e.g. 10 point difference)"
+        "-5 to all skills while outdoors"
     ),
     doOnce = function()
         updateStats(5)

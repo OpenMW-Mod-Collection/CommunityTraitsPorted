@@ -65,12 +65,12 @@ local selfSpells = self.type.spells(self)
 --     ["wood elf"] = "wood elf",
 --     bosmer       = "wood elf",
 --     -- TR
---     reachman     = "T_Sky_Reachman",
---     cathay       = "T_Els_Cathay",
---     cathayRaht   = "T_Els_Cathay-raht",
---     ohmes        = "T_Els_Ohmes",
---     ohmesRaht    = "T_Els_Ohmes-raht",
---     suthay       = "T_Els_Suthay",
+    -- reachman     = "t_sky_reachman",
+    -- cathay       = "t_els_cathay",
+    -- cathayRaht   = "t_els_cathay-raht",
+    -- ohmes        = "t_els_ohmes",
+    -- ohmesRaht    = "t_els_ohmes-raht",
+    -- suthay       = "t_els_suthay",
 -- }
 
 I.CharacterTraits.addTrait {

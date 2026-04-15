@@ -9,7 +9,7 @@ local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").backgro
 local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
 
 local period = time.minute
-local dremorasKilled = 0
+local dremorasSpawned = 0
 local timerStarted = false
 local minDelay = 1 * time.hour
 local maxDelay = 7 * time.day -- why such a long delay? so it would be sudden, ofc
@@ -40,7 +40,8 @@ local spawnDremora = async:registerTimerCallback(
             }
         )
 
-        timerStarted = true
+        timerStarted = false
+        dremorasSpawned = dremorasSpawned + 1
 
         local msg = introPhrases[math.random(#introPhrases)]
         self:sendEvent(
@@ -51,7 +52,7 @@ local spawnDremora = async:registerTimerCallback(
 )
 
 local function checkLevel()
-    local readyForDremora = self.type.stats.level(self).current >= 2 + dremorasKilled * 2
+    local readyForDremora = self.type.stats.level(self).current >= 2 + dremorasSpawned * 2
     if not readyForDremora or timerStarted then return end
 
     async:newGameTimer(
@@ -67,8 +68,8 @@ I.CharacterTraits.addTrait {
     name = "Blood of the Dremora",
     description = (
         "Long ago, you performed a dark ritual to infuse your blood with that of a dremora. " ..
-        "While it did increase your magical affinity, it also angered the him a great deal. " ..
-        "Every once in a while, the daedra will summon himself to Nirn and hunt you down. " ..
+        "While it did increase your magical affinity, it also angered the him a great deal.\n\n" ..
+        "> Every once in a while, the daedra will summon himself to Nirn and hunt you down. " ..
         "Whenever he is defeated, you absorb his blood, causing all your magic skills to increase by 1."
     ),
     onLoad = function()
@@ -87,7 +88,6 @@ local function dremoraDied()
     skills.mysticism(self).base = skills.mysticism(self).base + 1
     skills.restoration(self).base = skills.restoration(self).base + 1
 
-    dremorasKilled = dremorasKilled + 1
     self:sendEvent(
         "ShowMessage",
         { message = "Dremora blood courses through your veins. Your magic skills have increased!" }
@@ -96,14 +96,14 @@ end
 
 local function onSave()
     return {
-        dremorasKilled = dremorasKilled,
+        dremorasSpawned = dremorasSpawned,
         dremoraTimerStarted = timerStarted,
     }
 end
 
 local function onLoad(data)
     if not data then return end
-    dremorasKilled = data.dremorasKilled or dremorasKilled
+    dremorasSpawned = data.dremorasSpawned or dremorasSpawned
     timerStarted = data.dremoraTimerStarted or timerStarted
 end
 

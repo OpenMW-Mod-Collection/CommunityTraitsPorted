@@ -3,6 +3,7 @@ GLOBAL: scripts/MerlordBackgrounds/global.lua
 
 CUSTOM: scripts/MerlordBackgrounds/backgrounds_custom/bloodOfDremora.lua
 CUSTOM: scripts/MerlordBackgrounds/backgrounds_custom/escapedSlave.lua
+CUSTOM: scripts/MerlordBackgrounds/backgrounds_custom/ratKing.lua
 
 MENU: scripts/MerlordBackgrounds/settingsMenu.lua
 GLOBAL: scripts/MerlordBackgrounds/settingsGlobal.lua
