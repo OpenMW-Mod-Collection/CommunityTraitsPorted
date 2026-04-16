@@ -17,7 +17,6 @@ local function generateFamedSword(data)
             name     = data.swordName
         }
     )
-    print(record.id)
     local sword = world.createObject(record.id)
     sword:moveInto(data.player)
     data.player:sendEvent("CharacterTraits_swordRecieved", sword)

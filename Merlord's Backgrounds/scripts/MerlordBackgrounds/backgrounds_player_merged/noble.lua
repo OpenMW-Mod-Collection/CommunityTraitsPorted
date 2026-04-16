@@ -11,7 +11,7 @@ I.CharacterTraits.addTrait {
     name = "Adopted by Nobles",
     description = (
         "Adopted by a noble family at a very young age, you lived a life of comfort and luxury. " ..
-        "You had a formal education where you learned to read and speak with manners." ..
+        "You had a formal education where you learned to read and speak with manners. " ..
         "However, being waited on hand and foot has left you with a lack of willpower. " ..
         "You are provided with a set of expensive clothing, a gift from your adoptive parents.\n" ..
         "\n" ..

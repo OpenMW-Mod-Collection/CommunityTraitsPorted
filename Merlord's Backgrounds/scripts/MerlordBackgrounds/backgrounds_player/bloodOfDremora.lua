@@ -68,7 +68,7 @@ I.CharacterTraits.addTrait {
     name = "Blood of the Dremora",
     description = (
         "Long ago, you performed a dark ritual to infuse your blood with that of a dremora. " ..
-        "While it did increase your magical affinity, it also angered the him a great deal.\n\n" ..
+        "While it did increase your magical affinity, it also angered him a great deal.\n\n" ..
         "> Every once in a while, the daedra will summon himself to Nirn and hunt you down. " ..
         "Whenever he is defeated, you absorb his blood, causing all your magic skills to increase by 1."
     ),

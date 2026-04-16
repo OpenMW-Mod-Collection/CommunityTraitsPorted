@@ -82,8 +82,7 @@ I.CharacterTraits.addTrait {
         "\n" ..
         "+10 Long Blade\n" ..
         "+10 Reputation\n" ..
-        "> You start with your infamous sword.\n" ..
-        "> For each rival you defeat, your blade will grow in power."
+        "> You start with your infamous sword. For each rival you defeat, your blade will grow in power if it's in your inventory."
     ),
     checkDisabled = function()
         return core.API_REVISION < 121

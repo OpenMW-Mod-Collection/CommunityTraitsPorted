@@ -21,7 +21,7 @@ I.CharacterTraits.addTrait {
     description = (
         "Discarded in the sewers as an infant, you were raised by rats. " ..
         "You now have an affinity for the furry beasts, and any you encounter will follow " ..
-        "you wherever you go no matter what." ..
+        "you wherever you go no matter what. " ..
         "Unfortunately, your time spent in close proximity with your rodent friends has given you a " ..
         "potent odor.\n" ..
         "\n" ..

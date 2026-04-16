@@ -79,7 +79,7 @@ Self-explanatory, I presume?
 
 - Character Traits Framework by me
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042) by OAAB_Data Team - for Merlord's Character Backgrounds
-- OpenMW 0.51 Nightly (April 2026 or newer) - for Famed Warrior background (added by Merlord's Character Backgrounds)
+- OpenMW 0.51 Nightly (April 2026 or newer) - for Famed Warrior background (Merlord's Character Backgrounds)
 
 ### Load Order
 
