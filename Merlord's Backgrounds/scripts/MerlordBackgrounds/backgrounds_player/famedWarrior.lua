@@ -20,7 +20,7 @@ local timerStarted = false
 local spawnDistance = 300
 local stopTimer
 local bgPicked = false
-local swordSpawned = false
+local currSwordRecordId
 
 local rivals = {
     "mer_bg_rival_01",
@@ -78,16 +78,20 @@ I.CharacterTraits.addTrait {
         "as the warrior who finally defeated you in battle. As such, you will likely encounter these rivals in " ..
         "your travels.\n" ..
         "\n" ..
+        "Requirements: OpenMW 0.51 RC1 or newer.\n" ..
+        "\n" ..
         "+10 Long Blade\n" ..
         "+10 Reputation\n" ..
         "> You start with your infamous sword.\n" ..
         "> For each rival you defeat, your blade will grow in power."
     ),
+    checkDisabled = function()
+        return core.API_REVISION < 121
+    end,
     doOnce = function()
-        core.sendGlobalEvent("CharacterTraits_grantRep", 10)
-        -- -- not adding it until .51 fully gets released
-        -- local rep = self.type.stats.reputation(self)
-        -- rep.current = rep.current + 10
+        ---@diagnostic disable-next-line: undefined-field
+        local rep = self.type.stats.reputation(self)
+        rep.current = rep.current + 10
 
         local longBlade = self.type.stats.skills.longblade(self)
         longBlade.base = longBlade.base + 10
@@ -100,8 +104,7 @@ I.CharacterTraits.addTrait {
 }
 
 local function tryNamingSword()
-    print(not bgPicked, swordSpawned)
-    if not bgPicked or swordSpawned then return end
+    if not bgPicked or currSwordRecordId then return end
 
     swordNameUi.show()
     ---@diagnostic disable-next-line: missing-fields
@@ -112,13 +115,21 @@ end
 local function swordRecieved(sword)
     I.UI.setMode()
     core.sendGlobalEvent('Unpause', 'ui')
-    swordSpawned = true
+    currSwordRecordId = sword.recordId
+end
+
+local function swordUpgraded(sword)
+    currSwordRecordId = sword.recordId
 end
 
 local function rivalDied()
     core.sendGlobalEvent(
         "CharacterTraits_upgradeSword",
-        { player = self, swordLevel = rivalsSpawned }
+        {
+            player = self,
+            currSwordRecordId = currSwordRecordId,
+            swordLevel = rivalsSpawned
+        }
     )
 end
 
@@ -126,7 +137,7 @@ local function onSave()
     return {
         rivalsSpawned = rivalsSpawned,
         timerStarted = timerStarted,
-        swordSpawned = swordSpawned
+        currSwordRecordId = currSwordRecordId
     }
 end
 
@@ -134,7 +145,7 @@ local function onLoad(data)
     if not data then return end
     rivalsSpawned = data.rivalsSpawned or rivalsSpawned
     timerStarted = data.timerStarted or timerStarted
-    swordSpawned = data.swordSpawned or swordSpawned
+    currSwordRecordId = data.currSwordRecordId or currSwordRecordId
 end
 
 return {
@@ -145,6 +156,7 @@ return {
     eventHandlers = {
         CharacterTraits_allTraitsPicked = tryNamingSword,
         CharacterTraits_swordRecieved = swordRecieved,
+        CharacterTraits_swordUpgraded = swordUpgraded,
         CharacterTraits_rivalDied = rivalDied,
     }
 }
