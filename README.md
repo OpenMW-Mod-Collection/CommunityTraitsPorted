@@ -10,21 +10,26 @@ Currently ported trait packs:
 
 **Backgrounds**
 
-- [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) by Merlord
+- [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) by Merlord (27 traits)
+- Sage's Backgrounds - Merged Version by VvardenfellStormSage (5 traits)
+  - [Raised by Beasts](https://www.nexusmods.com/morrowind/mods/52560)
+  - [Raised by Cultists](https://www.nexusmods.com/morrowind/mods/53851)
+  - [The Slayer](https://www.nexusmods.com/morrowind/mods/52769)
+  - [The Ronin](https://www.nexusmods.com/morrowind/mods/53696)
 
 **Beliefs**
 
-- [mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031) by MTR
+- [mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031) by MTR (80 traits)
 
 **Lineages**
 
-- [mtrLineage](https://www.nexusmods.com/morrowind/mods/49996) by MTR
+- [mtrLineage](https://www.nexusmods.com/morrowind/mods/49996) by MTR (81 trait)
 
 **Cultures**
 
-- [mtrCultures](https://www.nexusmods.com/morrowind/mods/51282) by MTR
+- [mtrCultures](https://www.nexusmods.com/morrowind/mods/51282) by MTR (57 + 10 traits)
 
-I'm not listing every single one of them (bro, there's 250+ of them here), so for info check individual mod pages instead.
+I'm not listing every single one of them, so for info check individual mod pages instead.
 
 ### My Personal Changes
 
@@ -78,7 +83,7 @@ Self-explanatory, I presume?
 ### Requirements
 
 - Character Traits Framework by me
-- [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042) by OAAB_Data Team - for Merlord's Character Backgrounds
+- [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042) by OAAB_Data Team - for Merlord's Character Backgrounds and Sage's Backgrounds
 - OpenMW 0.51 Nightly (April 2026 or newer) - for Famed Warrior background (Merlord's Character Backgrounds)
 
 ### Load Order
