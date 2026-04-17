@@ -1,0 +1,8 @@
+page_name: Character Traits - The Wretched and The Weird
+page_description: Settings for The Wretched and The Weird backgrounds.
+
+drunk_groupName: Drunkard
+drunkTime_name: Drunk Time (hours)
+drunkTime_desc: The duration for which the character remains drunk after consuming alcohol.
+recoveryTime_name: Recovery Time (days)
+recoveryTime_desc: The time it takes for the character to recover from alcohol withdrawal.

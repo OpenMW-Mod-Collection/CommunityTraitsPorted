@@ -1,0 +1,92 @@
+---@diagnostic disable: assign-type-mismatch
+local I = require("openmw.interfaces")
+local self = require("openmw.self")
+local core = require("openmw.core")
+
+local traitType = require("scripts.WretchedAndWeird.utils.traitTypes").background
+
+I.CharacterTraits.addTrait {
+    id = "bogWitch",
+    type = traitType,
+    name = "Bog Witch",
+    description = (
+        "Eye of newt and toe of frog, wool of bat and tongue of dog! You are a mysterious bog witch. " ..
+        "Your brews are the stuff of legend, and you are a master of a swampy sort of magic. " ..
+        "However, a lifetime of breathing swamp gas has left you somewhat frail, and people seem unnerved by your tendency to cackle.\n" ..
+        "\n" ..
+        "+10 Alchemy\n" ..
+        "-10 Endurance and Personality\n" ..
+        "> Spells using only poison-related effects recoup half their magicka cost when cast"
+    ),
+    doOnce = function()
+        local selfSkills = self.type.stats.skills
+        local selfAttrs = self.type.stats.attributes
+        local selfSpells = self.type.spells(self)
+
+        selfSkills.alchemy(self).base = selfSkills.alchemy(self).base + 10
+
+        selfAttrs.endurance(self).base = selfAttrs.endurance(self).base - 10
+        selfAttrs.personality(self).base = selfAttrs.personality(self).base - 10
+
+        selfSpells:add("poison")
+
+        local startingItems = {}
+        if core.contentFiles.has("Tamriel_Data.esm") then
+            startingItems[#startingItems + 1] = {
+                player = self,
+                itemId = "T_Bre_Ep_HatWizard_01",
+                count = 1,
+                autoEquip = true,
+            }
+            startingItems[#startingItems + 1] = {
+                player = self,
+                itemId = "T_Bre_Ep_RobeWizard_01",
+                count = 1,
+                autoEquip = true,
+            }
+        else
+            startingItems[#startingItems + 1] = {
+                player = self,
+                itemId = "lack_ww_WitchHat",
+                count = 1,
+                autoEquip = true,
+            }
+        end
+        core.sendGlobalEvent(
+            "WretchedAndWeird_addItems",
+            startingItems
+        )
+    end,
+    onLoad = function()
+        local selfMagicka = self.type.stats.dynamic.magicka(self)
+        local stopKeys = {
+            ["self stop"] = true,
+            ["touch stop"] = true,
+            ["target stop"] = true,
+        }
+        local poisonEffects = {
+            [core.magic.EFFECT_TYPE.Poison] = true,
+            [core.magic.EFFECT_TYPE.CurePoison] = true,
+            [core.magic.EFFECT_TYPE.ResistPoison] = true,
+            [core.magic.EFFECT_TYPE.WeaknessToPoison] = true,
+        }
+
+        I.AnimationController.addTextKeyHandler('spellcast', function(groupname, key)
+            if not stopKeys[key] then return end
+
+            local selectedSpell = self.type.getSelectedSpell(self)
+            if not selectedSpell or selectedSpell ~= core.magic.SPELL_TYPE.Spell then return end
+
+            for _, effect in ipairs(selectedSpell.effects) do
+                if not poisonEffects[effect.id] then
+                    return
+                end
+            end
+
+            selfMagicka.current = math.min(
+                selfMagicka.base + selfMagicka.modifier,
+                selfMagicka.current + selectedSpell.cost / 2
+            )
+        end)
+    end
+}
