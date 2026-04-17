@@ -19,6 +19,6 @@ I.CharacterTraits.addTrait {
         return self.type.records[self.recordId].race ~= "wood elf"
     end,
     onLoad = function()
-        core.sendGlobalEvent("CharacterTraits_registerGreenPact", self.id)
+        core.sendGlobalEvent("MerlordsTraits_registerGreenPact", self.id)
     end,
 }

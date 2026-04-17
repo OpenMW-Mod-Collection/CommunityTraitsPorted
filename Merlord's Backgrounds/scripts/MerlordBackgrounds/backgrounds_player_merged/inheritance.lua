@@ -20,7 +20,7 @@ I.CharacterTraits.addTrait {
         willpower.base = willpower.base - 10
 
         core.sendGlobalEvent(
-            "CharacterTraits_addItems",
+            "MerlordsTraits_addItems",
             { {
                 ---@diagnostic disable-next-line: assign-type-mismatch
                 player = self,

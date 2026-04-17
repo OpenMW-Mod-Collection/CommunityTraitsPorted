@@ -29,6 +29,6 @@ I.CharacterTraits.addTrait {
         skills.speechcraft(self).base = skills.speechcraft(self).base + 10
     end,
     onLoad = function()
-        core.sendGlobalEvent("CharacterTraits_registerFramed", self)
+        core.sendGlobalEvent("MerlordsTraits_registerFramed", self)
     end,
 }

@@ -48,9 +48,9 @@ end
 
 return {
     eventHandlers = {
-        CharacterTraits_multScale = multScale,
-        CharacterTraits_addItems = addItems,
-        CharacterTraits_safeSpawn = safeSpawn,
-        CharacterTraits_onScriptedActorDeath = onScriptedActorDeath,
+        MerlordsTraits_multScale = multScale,
+        MerlordsTraits_addItems = addItems,
+        MerlordsTraits_safeSpawn = safeSpawn,
+        MerlordsTraits_onScriptedActorDeath = onScriptedActorDeath,
     }
 }

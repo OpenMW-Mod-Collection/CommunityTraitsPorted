@@ -19,7 +19,7 @@ local function generateFamedSword(data)
     )
     local sword = world.createObject(record.id)
     sword:moveInto(data.player)
-    data.player:sendEvent("CharacterTraits_swordRecieved", sword)
+    data.player:sendEvent("MerlordsTraits_swordRecieved", sword)
 
     ---@diagnostic disable-next-line: undefined-field
     data.player:sendEvent("ShowMessage", { message = "Your sword has been named " .. record.name .. "." })
@@ -77,7 +77,7 @@ local function upgradeSword(data)
 
     ---@diagnostic disable-next-line: undefined-field
     data.player:sendEvent("ShowMessage", { message = newSwordRecord.name .. " has grown more powerful." })
-    data.player:sendEvent("CharacterTraits_swordUpgraded", newSword)
+    data.player:sendEvent("MerlordsTraits_swordUpgraded", newSword)
     if swordWasEquipped then
         core.sendGlobalEvent('UseItem', { object = newSword, actor = data.player })
     end
@@ -85,7 +85,7 @@ end
 
 return {
     eventHandlers = {
-        CharacterTraits_generateFamedSword = generateFamedSword,
-        CharacterTraits_upgradeSword = upgradeSword,
+        MerlordsTraits_generateFamedSword = generateFamedSword,
+        MerlordsTraits_upgradeSword = upgradeSword,
     }
 }

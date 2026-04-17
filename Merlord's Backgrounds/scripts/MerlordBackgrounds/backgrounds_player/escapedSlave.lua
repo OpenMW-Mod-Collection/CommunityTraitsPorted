@@ -29,7 +29,7 @@ local spawnSlaver = async:registerTimerCallback(
     "spawnSlaver",
     function()
         core.sendGlobalEvent(
-            "CharacterTraits_safeSpawn",
+            "MerlordsTraits_safeSpawn",
             {
                 player = self,
                 actor = slavers[slaversSpawned + 1],
@@ -84,7 +84,7 @@ I.CharacterTraits.addTrait {
     end,
     doOnce = function()
         core.sendGlobalEvent(
-            "CharacterTraits_addItems",
+            "MerlordsTraits_addItems",
             {
                 {
                     player = self,

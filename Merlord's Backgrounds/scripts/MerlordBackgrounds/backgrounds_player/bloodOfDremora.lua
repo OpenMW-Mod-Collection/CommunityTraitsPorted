@@ -31,7 +31,7 @@ local spawnDremora = async:registerTimerCallback(
         local leveledRecord = types.LevelledCreature.records["mer_bg_dremList"]
         local dremoraId = leveledRecord.getRandomId(leveledRecord, summonerLevel)
         core.sendGlobalEvent(
-            "CharacterTraits_safeSpawn",
+            "MerlordsTraits_safeSpawn",
             {
                 player = self,
                 actor = dremoraId,
@@ -113,6 +113,6 @@ return {
         onLoad = onLoad
     },
     eventHandlers = {
-        CharacterTraits_dremoraDied = dremoraDied,
+        MerlordsTraits_dremoraDied = dremoraDied,
     }
 }

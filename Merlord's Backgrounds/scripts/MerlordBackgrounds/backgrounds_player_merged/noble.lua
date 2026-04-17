@@ -31,7 +31,7 @@ I.CharacterTraits.addTrait {
         willpower.base = willpower.base - 10
 
         core.sendGlobalEvent(
-            "CharacterTraits_addItems",
+            "MerlordsTraits_addItems",
             {
                 {
                     player = self,

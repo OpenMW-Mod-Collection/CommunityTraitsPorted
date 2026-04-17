@@ -5,7 +5,7 @@ local function onInit(scriptData)
 end
 
 local function onDeath()
-    player:sendEvent("CharacterTraits_rivalDied")
+    player:sendEvent("MerlordsTraits_rivalDied")
 end
 
 return {

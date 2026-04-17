@@ -39,7 +39,7 @@ local spawnRival = async:registerTimerCallback(
     "spawnRival",
     function()
         core.sendGlobalEvent(
-            "CharacterTraits_safeSpawn",
+            "MerlordsTraits_safeSpawn",
             {
                 player = self,
                 actor = rivals[rivalsSpawned + 1],
@@ -94,7 +94,7 @@ I.CharacterTraits.addTrait {
 
         local longBlade = self.type.stats.skills.longblade(self)
         longBlade.base = longBlade.base + 10
-        core.sendGlobalEvent("CharacterTraits_grantRep", 10)
+        core.sendGlobalEvent("MerlordsTraits_grantRep", 10)
     end,
     onLoad = function()
         bgPicked = true
@@ -123,7 +123,7 @@ end
 
 local function rivalDied()
     core.sendGlobalEvent(
-        "CharacterTraits_upgradeSword",
+        "MerlordsTraits_upgradeSword",
         {
             player = self,
             currSwordRecordId = currSwordRecordId,
@@ -153,9 +153,9 @@ return {
         onLoad = onLoad
     },
     eventHandlers = {
-        CharacterTraits_allTraitsPicked = tryNamingSword,
-        CharacterTraits_swordRecieved = swordRecieved,
-        CharacterTraits_swordUpgraded = swordUpgraded,
-        CharacterTraits_rivalDied = rivalDied,
+        MerlordsTraits_allTraitsPicked = tryNamingSword,
+        MerlordsTraits_swordRecieved = swordRecieved,
+        MerlordsTraits_swordUpgraded = swordUpgraded,
+        MerlordsTraits_rivalDied = rivalDied,
     }
 }

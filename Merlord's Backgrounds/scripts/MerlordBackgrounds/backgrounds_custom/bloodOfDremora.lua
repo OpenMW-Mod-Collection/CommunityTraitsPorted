@@ -12,9 +12,9 @@ end
 
 local function onDeath()
     core.sound.playSound3d("dremora moan", self)
-    player:sendEvent("CharacterTraits_dremoraDied")
+    player:sendEvent("MerlordsTraits_dremoraDied")
     core.sendGlobalEvent(
-        "CharacterTraits_onScriptedActorDeath",
+        "MerlordsTraits_onScriptedActorDeath",
         {
             script = script,
             actor = self,

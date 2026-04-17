@@ -404,7 +404,7 @@ end
 
 return {
     eventHandlers = {
-        CharacterTraits_registerGreenPact = function(playerId)
+        MerlordsTraits_registerGreenPact = function(playerId)
             if not next(greenPactPlayers) then
                 I.ItemUsage.addHandlerForType(types.Ingredient, isGreenPactSafe)
                 I.ItemUsage.addHandlerForType(types.Potion, isGreenPactSafe)

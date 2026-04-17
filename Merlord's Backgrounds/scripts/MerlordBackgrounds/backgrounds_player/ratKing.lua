@@ -67,7 +67,7 @@ local function localEnemyTargetChanged(data)
                 settings:get("maxSpawn")
             )
             for _ = 1, count do
-                core.sendGlobalEvent("CharacterTraits_safeSpawn", spawnData)
+                core.sendGlobalEvent("MerlordsTraits_safeSpawn", spawnData)
             end
         end
     end

@@ -16,7 +16,7 @@ I.CharacterTraits.addTrait {
     ),
     doOnce = function()
         core.sendGlobalEvent(
-            "CharacterTraits_multScale",
+            "MerlordsTraits_multScale",
             { obj = self, mult = 1.05 }
         )
 

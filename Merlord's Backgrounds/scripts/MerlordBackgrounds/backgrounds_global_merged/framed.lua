@@ -34,7 +34,7 @@ timerCallback = async:registerTimerCallback(
 
 return {
     eventHandlers = {
-        CharacterTraits_registerFramed = function(player)
+        MerlordsTraits_registerFramed = function(player)
             time.newSimulationTimer(
                 math.random(time.hour, time.day),
                 timerCallback,
