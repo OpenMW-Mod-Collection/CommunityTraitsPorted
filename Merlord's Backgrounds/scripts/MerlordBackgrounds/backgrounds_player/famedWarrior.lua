@@ -153,7 +153,7 @@ return {
         onLoad = onLoad
     },
     eventHandlers = {
-        MerlordsTraits_allTraitsPicked = tryNamingSword,
+        CharacterTraits_allTraitsPicked = tryNamingSword,
         MerlordsTraits_swordRecieved = swordRecieved,
         MerlordsTraits_swordUpgraded = swordUpgraded,
         MerlordsTraits_rivalDied = rivalDied,

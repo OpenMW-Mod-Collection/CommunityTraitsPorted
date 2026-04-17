@@ -16,6 +16,11 @@ Currently ported trait packs:
   - [Raised by Cultists](https://www.nexusmods.com/morrowind/mods/53851)
   - [The Slayer](https://www.nexusmods.com/morrowind/mods/52769)
   - [The Ronin](https://www.nexusmods.com/morrowind/mods/53696)
+- [The Wretched and the Weird](https://www.nexusmods.com/morrowind/mods/55570) by AlandroSul
+  - The Wretched and the Weird (9 traits)
+  - Oblivion Backgrounds (12 traits)
+- [More Backgrounds](https://www.nexusmods.com/morrowind/mods/55753) by Frana5u (14 traits)
+- [More character backgrounds for Merlord's character backgrounds](https://www.nexusmods.com/morrowind/mods/48076) by isNaN (7 traits)
 
 **Beliefs**
 
@@ -78,6 +83,26 @@ It's actually the same as in Merlord's mod, but I figured I should mention it ju
 
 Self-explanatory, I presume?
 
+**The Wretched and the Weird > Drunkard**
+
+> Drain fatigue ability -> max fatigue reduction
+
+Drain fatigue affects current fatigue and not max, thus it gets healed in a few seconds back.
+
+> Duration of the withdrawal: 6 real life hours -> 7.5 in-game days
+
+Since I like to leave the game running while I'm AFK, I translated real life time checks into in-game. At default settings they should be the same, but if you play with slower flow of time, you might want to reduce this setting. Or not. I certainly won't.
+
+> Any potions are alcoholic -> only beverages are alcoholic
+
+While I can imagine alchemists making their tinctures alcoholic-based, it doesn't make much sense gameplay-wise when you already constantly drinking potions.
+
+**The Wretched and the Weird > Nudist**
+
+> +75 Unarmored -> +30 Unarmored
+
+Starting with ~50-70 armor right off the bat is not a good balancing in my book.
+
 ## Installation
 
 ### Requirements
@@ -103,15 +128,39 @@ Compatible with any mods.
 
 Safe to install or update mid-playthrough. Removing the mod, though, might not revert all effects of the picked traits.
 
+### Supported mods
+
+<!-- **Alcoholic drinks**
+
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526)
+- [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
+- [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042) -->
+
+**Green pact-friendly foods**
+
+<!-- - [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) -->
+- [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
+- [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
+- [Devilish Vampire Overhaul](https://www.nexusmods.com/morrowind/mods/52969)
+- [Expanded Loot](https://www.nexusmods.com/morrowind/mods/56699)
+- [Hunterwind](https://www.nexusmods.com/morrowind/mods/54808)
+- [Uvirith's Legacy](https://www.nexusmods.com/morrowind/mods/53858)
+- [Starwind](https://www.nexusmods.com/morrowind/mods/48909)
+- Plus a name-based recognition for non-covered cases
+
 ## Recommended Mods
 
 - [Pretty Stats](https://www.nexusmods.com/morrowind/mods/58304) by ownlyme
+- [Abilities Are Modifiers](https://www.nexusmods.com/morrowind/mods/57295) by ownlyme
+- [Uncapper](https://www.nexusmods.com/morrowind/mods/58457) by ownlyme / [Skill Evolution](https://www.nexusmods.com/morrowind/mods/57802) by mym
 - [HUDMarkers](https://www.nexusmods.com/morrowind/mods/57112) by ownlyme
-- [Attend Me](https://www.nexusmods.com/morrowind/mods/51232) by urm
 - [Jammings off](https://www.nexusmods.com/morrowind/mods/44523) by SymphonyTeam
+- [Attend Me](https://www.nexusmods.com/morrowind/mods/51232) by urm
 - [Paxon the Pack Rat](https://www.nexusmods.com/morrowind/mods/45669) by Tizzo
+- [Devilish Alcohol Overhaul](https://www.nexusmods.com/morrowind/mods/55038) by Merlord and DetailDevil 
 
 ## Credits
 
 **Sosnoviy Bor** - Trait porting  
-**Merlord, MTR** - Making the origianl traits
+**hyacinth and ownlyme** - Food and drinks databases ([Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526))  
+**Merlord, MTR, AlandroSul, Frana5u, isNaN** - Making the origianl traits

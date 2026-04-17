@@ -40,7 +40,7 @@ local attrs = {
     intelligence = selfAttrs.intelligence(self),
     luck         = selfAttrs.luck(self),
     personality  = selfAttrs.personality(self),
-    speed        = selfAttrs.intelligence(self),
+    speed        = selfAttrs.speed(self),
     strength     = selfAttrs.strength(self),
     willpower    = selfAttrs.willpower(self),
 }
@@ -997,7 +997,7 @@ I.CharacterTraits.addTrait {
     type = traitType,
     name = "Tehl",
     description = (
-        "The Tehl are inhabitants of northeastern part Valenwood province - area around the city of " ..
+        "The Tehl are inhabitants of northeastern part of the Valenwood province - area around the city of " ..
         "Arenthia which borders Colovia and Elsweyr. Bosmers living there enjoy more cosmopolitan " ..
         "lifestyle than any other inhabitants of Valenwood. " ..
         "\n" ..
@@ -1026,7 +1026,7 @@ I.CharacterTraits.addTrait {
     type = traitType,
     name = "Camorani",
     description = (
-        "Camorani are a group of Bosmer loyal to the Camoran dynasty. Apart from othe Bosmer both " ..
+        "Camorani are a group of Bosmer loyal to the Camoran dynasty. Apart from other Bosmer both " ..
         "in appearance and in customs since the beginning of the First Era, they are often mistaken " ..
         "for Altmer by outlanders. It's unclear whether their towering stature is caused by " ..
         "eugenicist breeding or simply by powerful magicka. " ..

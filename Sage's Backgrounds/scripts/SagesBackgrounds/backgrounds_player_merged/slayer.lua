@@ -19,8 +19,7 @@ I.CharacterTraits.addTrait {
         "knowledge into battle.\n" ..
         "\n" ..
         "> You start with a blessed stake and a tome of knowledge\n" ..
-        "+5 Agility, Strength and Speedy\n" ..
-        "+5 Agility, Strength and Speedy\n" ..
+        "+5 Agility, Strength and Speed\n" ..
         "+10% Weakness to Magicka"
     ),
     doOnce = function()

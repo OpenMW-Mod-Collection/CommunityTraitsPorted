@@ -1,8 +1,8 @@
 local I = require("openmw.interfaces")
 local types = require("openmw.types")
-local storage = require("openmw.storage")
+-- local storage = require("openmw.storage")
 
-local settings = storage.globalSection("SettingsMerlordBackgrounds_greenPact")
+-- local settings = storage.globalSection("SettingsMerlordBackgrounds_greenPact")
 
 local greenPactPlayers = {}
 -- extrected from Sun's Dusk
@@ -12,7 +12,7 @@ local greenPactPlayers = {}
 -- - Expanded Loot
 -- - Hackle-lo Smoke
 -- - Hunterwind
--- - NoM (Uvirith's Legacy)
+-- - Uvirith's Legacy
 -- - Starwind
 -- - The Tea Mod
 -- - Tamriel_Data
@@ -379,17 +379,18 @@ end
 local function isGreenPactSafe(item, actor, options)
     if not greenPactPlayers[actor.id] then return end
 
-    if I.SunsDusk then
-        local entry, _ = I.SunsDusk.isConsumable(item)
-        if entry then
-            local SDGreenPacted = entry.isGreenPact
-            if SDGreenPacted then
-                return true
-            elseif settings:get("forceSunsDusk") then
-                return false
-            end
-        end
-    end
+    -- Doesn't work in global scripts atm :(
+    -- if I.SunsDusk then
+    --     local entry, _ = I.SunsDusk.isConsumable(item)
+    --     if entry then
+    --         local SDGreenPacted = entry.isGreenPact
+    --         if SDGreenPacted then
+    --             return true
+    --         elseif settings:get("forceSunsDusk") then
+    --             return false
+    --         end
+    --     end
+    -- end
 
     if item.type == types.Potion
         or gpIngredients[item.recordId]
@@ -407,7 +408,7 @@ return {
         MerlordsTraits_registerGreenPact = function(playerId)
             if not next(greenPactPlayers) then
                 I.ItemUsage.addHandlerForType(types.Ingredient, isGreenPactSafe)
-                I.ItemUsage.addHandlerForType(types.Potion, isGreenPactSafe)
+                -- I.ItemUsage.addHandlerForType(types.Potion, isGreenPactSafe)
             end
             greenPactPlayers[playerId] = true
         end

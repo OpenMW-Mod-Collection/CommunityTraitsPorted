@@ -12,12 +12,12 @@ bountyLimit_desc: |
 minInterval_name: Min Bounty Interval (days)
 maxInterval_name: Max Bounty Interval (days)
 
-greenPact_groupName: Green Pact
-forceSunsDusk_name: Force Sun's Dusk Green Pact Labeling
-forceSunsDusk_desc: |
-  Does nothing if Sun's Dusk is not installed.
+# greenPact_groupName: Green Pact
+# forceSunsDusk_name: Force Sun's Dusk Green Pact Labeling
+# forceSunsDusk_desc: |
+#   Does nothing if Sun's Dusk is not installed.
 
-  If disabled, when Sun's Dusk doesn't recognize an ingredient as "green pact safe" by its metrics, the mod will additionally check the falloff table and names.
+#   If disabled, when Sun's Dusk doesn't recognize an ingredient as "green pact safe" by its metrics, the mod will additionally check the falloff table and names.
 
 ratKing_groupName: Rat King
 spawnCooldown_name: Rat Hordes Cooldown (in-game hours)
