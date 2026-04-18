@@ -20,7 +20,6 @@ Currently ported trait packs:
   - The Wretched and the Weird (9 traits)
   - Oblivion Backgrounds (12 traits)
 - [More Backgrounds](https://www.nexusmods.com/morrowind/mods/55753) by Frana5u (14 traits)
-- [More character backgrounds for Merlord's character backgrounds](https://www.nexusmods.com/morrowind/mods/48076) by isNaN (7 traits)
 
 **Beliefs**
 
@@ -83,6 +82,14 @@ It's actually the same as in Merlord's mod, but I figured I should mention it ju
 
 Self-explanatory, I presume?
 
+**Merlord's Character Backgrounds > Rat King**
+
+> Unchanged
+
+It's perfect as it is.
+
+<img src="media/rat.gif">
+
 **The Wretched and the Weird > Drunkard**
 
 > Drain fatigue ability -> max fatigue reduction
@@ -113,9 +120,18 @@ Starting with ~50-70 armor right off the bat is not a good balancing in my book.
 
 ### Load Order
 
-All trait modules need to be loaded after the `CharacterTraitsFramework.lua`. For example:
+All trait modules need to be loaded after the `CharacterTraitsFramework.omwscripts`.
 
-- CharacterTraitsFramework.lua
+Mods which need be loaded before the Traits Framework for traits to work properly:
+
+- [Reading is Good](https://www.nexusmods.com/morrowind/mods/58333) by hyacinth
+
+Example:
+
+- Reading is Good.omwscripts
+- ...
+- **CharacterTraitsFramework.omwscripts**
+- ...
 - CharacterTraits_Backgrounds.omwaddon
 - CharacterTraits_Backgrounds.omwscripts
 - CharacterTraits_Beliefs.omwaddon
@@ -142,13 +158,7 @@ This should be done on SD's side.
 
 ### Supported mods
 
-**Alcoholic drinks**
-
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) (takes over the control if it's installed)
-- [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
-- [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
-
-**Green pact-friendly foods**
+**Green Pact (Merlord's) > Green pact-friendly foods**
 
 - [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) (takes over the control if it's installed)
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
@@ -160,6 +170,16 @@ This should be done on SD's side.
 - [Starwind](https://www.nexusmods.com/morrowind/mods/48909)
 - Plus a name-based recognition for non-covered cases
 
+**Drunkard (Wretched) > Alcoholic drinks**
+
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) (takes over the control if it's installed)
+- [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
+- [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
+
+**Bookworm (Frana5u's)**
+
+- [Reading is Good](https://www.nexusmods.com/morrowind/mods/58333) - instead of doubling the skill points gained from reading a skill book, you recieve an additional 50% more skill gain bonus (value is based on RiG's settings)
+
 ## Recommended Mods
 
 - [Pretty Stats](https://www.nexusmods.com/morrowind/mods/58304) by ownlyme
@@ -168,6 +188,7 @@ This should be done on SD's side.
 - [Attend Me](https://www.nexusmods.com/morrowind/mods/51232) by urm
 - [Paxon the Pack Rat](https://www.nexusmods.com/morrowind/mods/45669) by Tizzo
 - [Devilish Alcohol Overhaul](https://www.nexusmods.com/morrowind/mods/55038) by Merlord and DetailDevil
+- [Shelf Control](https://www.nexusmods.com/morrowind/mods/57441) by me
 
 ## Credits
 
