@@ -59,6 +59,11 @@ I.CharacterTraits.addTrait {
     end,
     onLoad = function()
         local selfMagicka = self.type.stats.dynamic.magicka(self)
+        local startKeys = {
+            ["self start"] = true,
+            ["touch start"] = true,
+            ["target start"] = true,
+        }
         local stopKeys = {
             ["self stop"] = true,
             ["touch stop"] = true,
@@ -71,22 +76,33 @@ I.CharacterTraits.addTrait {
             [core.magic.EFFECT_TYPE.WeaknessToPoison] = true,
         }
 
+        local destruction = self.type.stats.skills.destruction(self)
+        local lastDestLevel = destruction.base
+        local lastDestProgress = destruction.progress
+
         I.AnimationController.addTextKeyHandler('spellcast', function(groupname, key)
-            if not stopKeys[key] then return end
-
-            local selectedSpell = self.type.getSelectedSpell(self)
-            if not selectedSpell or selectedSpell ~= core.magic.SPELL_TYPE.Spell then return end
-
-            for _, effect in ipairs(selectedSpell.effects) do
-                if not poisonEffects[effect.id] then
-                    return
+            if startKeys[key] then
+                lastDestLevel = destruction.base
+                lastDestProgress = destruction.progress
+            elseif stopKeys[key] then
+                local selectedSpell = self.type.getSelectedSpell(self)
+                if not selectedSpell or selectedSpell.type ~= core.magic.SPELL_TYPE.Spell then return end
+    
+                for _, effect in ipairs(selectedSpell.effects) do
+                    if not poisonEffects[effect.id] then
+                        return
+                    end
+                end
+                
+                if destruction.base > lastDestLevel or destruction.progress > lastDestProgress then
+                    lastDestLevel = destruction.base
+                    lastDestProgress = destruction.progress
+                    selfMagicka.current = math.min(
+                        selfMagicka.base + selfMagicka.modifier,
+                        selfMagicka.current + selectedSpell.cost / 2
+                    )
                 end
             end
-
-            selfMagicka.current = math.min(
-                selfMagicka.base + selfMagicka.modifier,
-                selfMagicka.current + selectedSpell.cost / 2
-            )
         end)
     end
 }

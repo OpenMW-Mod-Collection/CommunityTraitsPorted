@@ -31,23 +31,39 @@ I.CharacterTraits.addTrait {
             ["touch stop"] = true,
             ["target stop"] = true,
         }
+        local startKeys = {
+            ["self start"] = true,
+            ["touch start"] = true,
+            ["target start"] = true,
+        }
+
+        local destruction = self.type.stats.skills.destruction(self)
+        local lastDestLevel = destruction.base
+        local lastDestProgress = destruction.progress
 
         I.AnimationController.addTextKeyHandler('spellcast', function(groupname, key)
-            if not stopKeys[key] then return end
+            if startKeys[key] then
+                lastDestLevel = destruction.base
+                lastDestProgress = destruction.progress
+            elseif stopKeys[key] then
+                local selectedSpell = self.type.getSelectedSpell(self)
+                if not selectedSpell or selectedSpell ~= core.magic.SPELL_TYPE.Spell then return end
 
-            local selectedSpell = self.type.getSelectedSpell(self)
-            if not selectedSpell or selectedSpell ~= core.magic.SPELL_TYPE.Spell then return end
+                for _, effect in ipairs(selectedSpell.effects) do
+                    if effect.id ~= core.magic.EFFECT_TYPE.DamageHealth then
+                        return
+                    end
+                end
 
-            for _, effect in ipairs(selectedSpell.effects) do
-                if effect.id ~= core.magic.EFFECT_TYPE.DamageHealth then
-                    return
+                if destruction.base > lastDestLevel or destruction.progress > lastDestProgress then
+                    lastDestLevel = destruction.base
+                    lastDestProgress = destruction.progress
+                    selfMagicka.current = math.min(
+                        selfMagicka.base + selfMagicka.modifier,
+                        selfMagicka.current + selectedSpell.cost / 2
+                    )
                 end
             end
-
-            selfMagicka.current = math.min(
-                selfMagicka.base + selfMagicka.modifier,
-                selfMagicka.current + selectedSpell.cost / 2
-            )
         end)
     end
 }

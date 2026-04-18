@@ -1,8 +1,5 @@
 local I = require("openmw.interfaces")
 local types = require("openmw.types")
--- local storage = require("openmw.storage")
-
--- local settings = storage.globalSection("SettingsMerlordBackgrounds_greenPact")
 
 local greenPactPlayers = {}
 -- extrected from Sun's Dusk
@@ -378,19 +375,6 @@ end
 
 local function isGreenPactSafe(item, actor, options)
     if not greenPactPlayers[actor.id] then return end
-
-    -- Doesn't work in global scripts atm :(
-    -- if I.SunsDusk then
-    --     local entry, _ = I.SunsDusk.isConsumable(item)
-    --     if entry then
-    --         local SDGreenPacted = entry.isGreenPact
-    --         if SDGreenPacted then
-    --             return true
-    --         elseif settings:get("forceSunsDusk") then
-    --             return false
-    --         end
-    --     end
-    -- end
 
     if item.type == types.Potion
         or gpIngredients[item.recordId]

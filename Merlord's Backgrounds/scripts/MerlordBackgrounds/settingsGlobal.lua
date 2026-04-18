@@ -42,24 +42,6 @@ I.Settings.registerGroup {
     }
 }
 
--- I.Settings.registerGroup {
---     key = 'SettingsMerlordBackgrounds_greenPact',
---     page = 'MerlordBackgrounds',
---     l10n = 'MerlordBackgrounds',
---     name = 'greenPact_groupName',
---     permanentStorage = true,
---     order = 1,
---     settings = {
---         {
---             key = 'forceSunsDusk',
---             name = 'forceSunsDusk_name',
---             description = 'forceSunsDusk_desc',
---             renderer = 'checkbox',
---             default = true,
---         },
---     }
--- }
-
 I.Settings.registerGroup {
     key = 'SettingsMerlordBackgrounds_ratKing',
     page = 'MerlordBackgrounds',

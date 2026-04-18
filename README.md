@@ -124,21 +124,33 @@ All trait modules need to be loaded after the `CharacterTraitsFramework.lua`. Fo
 
 ## Compatibility
 
-Compatible with any mods.
+Compatible with basically any mods.
 
-Safe to install or update mid-playthrough. Removing the mod, though, might not revert all effects of the picked traits.
+Safe to install mid-playthrough. For updating check release details. Removing the mod might not revert all effects of the picked traits.
+
+### Known issues
+
+**[Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526)**
+
+> Green Pact (Merlord's): Possible inconsistencies in tagging ingredients green pact compliant
+
+While we use the same food and drinks database (at least, as of time of this collection's release), due to multiple factors I can't sync their data with mine.
+
+> Green Pact (Merlord's): Eating food from world using SD "interaction" feature is not restricted
+
+This should be done on SD's side.
 
 ### Supported mods
 
-<!-- **Alcoholic drinks**
+**Alcoholic drinks**
 
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526)
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
-- [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042) -->
+- [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526)
 
 **Green pact-friendly foods**
 
-<!-- - [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) -->
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) (it actually takes over the control if it's installed)
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
 - [Devilish Vampire Overhaul](https://www.nexusmods.com/morrowind/mods/52969)
@@ -157,7 +169,7 @@ Safe to install or update mid-playthrough. Removing the mod, though, might not r
 - [Jammings off](https://www.nexusmods.com/morrowind/mods/44523) by SymphonyTeam
 - [Attend Me](https://www.nexusmods.com/morrowind/mods/51232) by urm
 - [Paxon the Pack Rat](https://www.nexusmods.com/morrowind/mods/45669) by Tizzo
-- [Devilish Alcohol Overhaul](https://www.nexusmods.com/morrowind/mods/55038) by Merlord and DetailDevil 
+- [Devilish Alcohol Overhaul](https://www.nexusmods.com/morrowind/mods/55038) by Merlord and DetailDevil
 
 ## Credits
 
