@@ -1,5 +1,6 @@
 local I = require("openmw.interfaces")
 local self = require("openmw.self")
+local core = require("openmw.core")
 
 local traitType = require("scripts.OblivionBackgrounds.utils.traitTypes").background
 
@@ -29,6 +30,42 @@ I.CharacterTraits.addTrait {
         selfSpells:add("lack_gg_GlisterWitch")
     end,
     onLoad = function()
-        -- TODO
+        local effects = core.magic.EFFECT_TYPE
+        local undeadEffects = {
+            [effects.SummonAncestralGhost] = true,
+            [effects.SummonBonelord] = true,
+            [effects.SummonBonewalker] = true,
+            [effects.SummonBonewolf] = true,
+            [effects.SummonGreaterBonewalker] = true,
+            [effects.SummonSkeletalMinion] = true,
+        }
+        local startKeys = {
+            ["self start"] = true,
+            ["touch start"] = true,
+            ["target start"] = true,
+        }
+
+        I.AnimationController.addTextKeyHandler('spellcast', function(groupname, key)
+            if not startKeys[key] then return end
+
+            local selectedSpell = self.type.getSelectedSpell(self)
+            if not selectedSpell then return end
+
+            for _, effect in ipairs(selectedSpell.effects) do
+                if undeadEffects[effect.id] then
+                    local activeSpells = self.type.activeSpells(self)
+                    activeSpells:add {
+                        id = "lack_gg_spellDisabled",
+                        ---@diagnostic disable-next-line: assign-type-mismatch
+                        effects = { 0 },
+                        ignoreResistances = true,
+                        ignoreSpellAbsorption = true,
+                        ignoreReflect = true,
+                        quiet = true,
+                    }
+                    return
+                end
+            end
+        end)
     end
 }
