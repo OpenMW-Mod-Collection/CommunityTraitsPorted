@@ -374,12 +374,9 @@ local function hasMeatyName(id)
 end
 
 local function isGreenPactSafe(item, actor, options)
-    if not greenPactPlayers[actor.id] then return end
+    if not greenPactPlayers[actor.id] or I.SunsDusk then return end
 
-    if item.type == types.Potion
-        or gpIngredients[item.recordId]
-        or hasMeatyName(item.recordId)
-    then
+    if gpIngredients[item.recordId] or hasMeatyName(item.recordId) then
         return true
     else
         actor:sendEvent("ShowMessage", { message = "The Green Pact prohibits you from eating this." })
@@ -392,7 +389,6 @@ return {
         MerlordsTraits_registerGreenPact = function(playerId)
             if not next(greenPactPlayers) then
                 I.ItemUsage.addHandlerForType(types.Ingredient, isGreenPactSafe)
-                -- I.ItemUsage.addHandlerForType(types.Potion, isGreenPactSafe)
             end
             greenPactPlayers[playerId] = true
         end

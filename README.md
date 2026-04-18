@@ -144,13 +144,13 @@ This should be done on SD's side.
 
 **Alcoholic drinks**
 
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) (takes over the control if it's installed)
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526)
 
 **Green pact-friendly foods**
 
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) (it actually takes over the control if it's installed)
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) (takes over the control if it's installed)
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
 - [Devilish Vampire Overhaul](https://www.nexusmods.com/morrowind/mods/52969)
@@ -163,8 +163,6 @@ This should be done on SD's side.
 ## Recommended Mods
 
 - [Pretty Stats](https://www.nexusmods.com/morrowind/mods/58304) by ownlyme
-- [Abilities Are Modifiers](https://www.nexusmods.com/morrowind/mods/57295) by ownlyme
-- [Uncapper](https://www.nexusmods.com/morrowind/mods/58457) by ownlyme / [Skill Evolution](https://www.nexusmods.com/morrowind/mods/57802) by mym
 - [HUDMarkers](https://www.nexusmods.com/morrowind/mods/57112) by ownlyme
 - [Jammings off](https://www.nexusmods.com/morrowind/mods/44523) by SymphonyTeam
 - [Attend Me](https://www.nexusmods.com/morrowind/mods/51232) by urm

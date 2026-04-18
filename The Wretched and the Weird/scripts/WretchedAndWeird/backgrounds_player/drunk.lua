@@ -175,18 +175,7 @@ I.CharacterTraits.addTrait {
     end
 }
 
-local function onConsume(item)
-    if not bgPicked or item.type ~= types.Potion or recovered then return end
-
-    if I.SunsDusk then
-        local _, typ = I.SunsDusk.isConsumable(item)
-        if typ and typ == "cooked" then
-            return
-        end
-    end
-
-    if not drinksList[item.recordId] then return end
-
+local function drinkConsumed()
     lastDrinkTimeIngame = core.getGameTime()
 
     if debuffed then
@@ -198,6 +187,27 @@ local function onConsume(item)
         self:sendEvent("ShowMessage", { message = "Finally, a drink!" })
         debuffed = false
     end
+end
+
+local function onConsume(item)
+    if not bgPicked or item.type ~= types.Potion or recovered then return end
+
+    if I.SunsDusk then
+        local ret, _ = I.SunsDusk.isConsumable(item)
+        if not ret or ret.consumeCategory ~= "alcohol" then
+            return
+        end
+    elseif not drinksList[item.recordId] then
+        return
+    end
+
+    drinkConsumed()
+end
+
+local function sdInteraction(obj)
+    local name = obj.type.records[obj.recordId].name:lower()
+    if name:find("water") or name:find("tea") then return end
+    drinkConsumed()
 end
 
 local function onLoad(data)
@@ -220,5 +230,8 @@ return {
         onLoad = onLoad,
         onSave = onSave,
         onConsume = onConsume,
+    },
+    eventHandlers = {
+        WretchedAndWeird_SDInteraction = sdInteraction,
     }
 }
