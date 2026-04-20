@@ -2,7 +2,7 @@
 
 Select your character's past that will shape his future.
 
-This is an effort to port some community-made traits based on [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) or MTR's mods.
+This is an effort to port some community-made traits based on [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) or MTR's mods to OpenMW based on Character Traits Framework.
 
 ## Traits
 
@@ -114,9 +114,9 @@ Starting with ~50-70 armor right off the bat is not a good balancing in my book.
 
 ### Requirements
 
-- Character Traits Framework by me
+- [Character Traits Framework](https://www.nexusmods.com/morrowind/mods/58703) by me
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042) by OAAB_Data Team - for Merlord's Character Backgrounds and Sage's Backgrounds
-- OpenMW 0.51 Nightly (April 2026 or newer) - for Famed Warrior background (Merlord's Character Backgrounds)
+- OpenMW 0.51 RC1 or newer - for Famed Warrior (Merlord's Character Backgrounds) and Akaviri Ancestry (Frana5u's Backgrounds)
 
 ### Load Order
 
@@ -144,18 +144,6 @@ Compatible with basically any mods.
 
 Safe to install mid-playthrough. For updating check release details. Removing the mod might not revert all effects of the picked traits.
 
-### Known issues
-
-**[Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526)**
-
-> Green Pact (Merlord's): Possible inconsistencies in tagging ingredients green pact compliant
-
-While we use the same food and drinks database (at least, as of time of this collection's release), due to multiple factors I can't sync their data with mine.
-
-> Green Pact (Merlord's): Eating food from world using SD "interaction" feature is not restricted
-
-This should be done on SD's side.
-
 ### Supported mods
 
 **Green Pact (Merlord's) > Green pact-friendly foods**
@@ -178,7 +166,7 @@ This should be done on SD's side.
 
 **Bookworm (Frana5u's)**
 
-- [Reading is Good](https://www.nexusmods.com/morrowind/mods/58333) - instead of doubling the skill points gained from reading a skill book, you recieve an additional 50% more skill gain bonus (value is based on RiG's settings)
+- [Reading is Good](https://www.nexusmods.com/morrowind/mods/58333) - instead of doubling the skill points gained from reading a skill book, you receive an additional 50% more skill gain bonus (value is based on RiG's settings)
 
 ## Recommended Mods
 
@@ -194,4 +182,4 @@ This should be done on SD's side.
 
 **Sosnoviy Bor** - Trait porting  
 **hyacinth and ownlyme** - Food and drinks databases ([Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526))  
-**Merlord, MTR, AlandroSul, Frana5u, isNaN** - Making the origianl traits
+**Merlord, MTR, VvardenfellStormSage, AlandroSul, Frana5u** - Making the origianal traits

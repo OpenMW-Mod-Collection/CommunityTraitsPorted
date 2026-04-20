@@ -78,8 +78,6 @@ I.CharacterTraits.addTrait {
         "as the warrior who finally defeated you in battle. As such, you will likely encounter these rivals in " ..
         "your travels.\n" ..
         "\n" ..
-        "Requirements: OpenMW 0.51 RC1 or newer.\n" ..
-        "\n" ..
         "+10 Long Blade\n" ..
         "+10 Reputation\n" ..
         "> You start with your infamous sword. For each rival you defeat, your blade will grow in power if it's in your inventory."
