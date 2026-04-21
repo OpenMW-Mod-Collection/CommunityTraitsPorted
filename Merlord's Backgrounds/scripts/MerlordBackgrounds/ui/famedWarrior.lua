@@ -83,7 +83,7 @@ swordWindow.show = function ()
         function()
             if name == "" then return end
             core.sendGlobalEvent(
-                "CharacterTraits_generateFamedSword",
+                "MerlordsTraits_generateFamedSword",
                 { swordName = name, player = self }
             )
             auxUi.deepDestroy(root)
