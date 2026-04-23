@@ -374,7 +374,7 @@ local function hasMeatyName(id)
 end
 
 local function isGreenPactSafe(item, actor, options)
-    if not greenPactPlayers[actor.id] or I.SunsDusk then return end
+    if not greenPactPlayers[actor.id] then return end
 
     if gpIngredients[item.recordId] or hasMeatyName(item.recordId) then
         return true

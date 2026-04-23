@@ -1,6 +1,6 @@
 # Community Traits Ported (OpenMW)
 
-Select your character's past that will shape his future.
+Select your character's past that will shape his future. Almost 300 traits across 4 types to choose from!
 
 This is an effort to port some community-made traits based on [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) or MTR's mods to OpenMW based on Character Traits Framework.
 
@@ -38,6 +38,9 @@ I'm not listing every single one of them, so for info check individual mod pages
 ### My Personal Changes
 
 They are reduced to a minimum and either are aimed at better balancing or dictated by engine limitations / my unwillingness to abuse the API.
+
+<details>
+<summary>Click me!</summary>
 
 **Merlord's Character Backgrounds > Artificer**
 
@@ -110,6 +113,8 @@ While I can imagine alchemists making their tinctures alcoholic-based, it doesn'
 
 Starting with ~50-70 armor right off the bat is not a good balancing in my book.
 
+</details>
+
 ## Installation
 
 ### Requirements
@@ -125,10 +130,14 @@ All trait modules need to be loaded after the `CharacterTraitsFramework.omwscrip
 Mods which need be loaded before the Traits Framework for traits to work properly:
 
 - [Reading is Good](https://www.nexusmods.com/morrowind/mods/58333) by hyacinth
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) by ownlyme and hyacinth
 
 Example:
 
 - Reading is Good.omwscripts
+- Sun's Dusk.omwaddon
+- Sun's Dusk Cooking.omwaddon
+- Sun's Dusk.omwscripts
 - ...
 - **CharacterTraitsFramework.omwscripts**
 - ...
@@ -148,7 +157,7 @@ Safe to install mid-playthrough. For updating check release details. Removing th
 
 **Green Pact (Merlord's) > Green pact-friendly foods**
 
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) (takes over the control if it's installed)
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) - instead of blocking non-GP food, you'd be able to feast it a cost of instant Broken Pact and negative satiation. You can eat it, but you really shouldn't
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
 - [Devilish Vampire Overhaul](https://www.nexusmods.com/morrowind/mods/52969)
@@ -160,7 +169,7 @@ Safe to install mid-playthrough. For updating check release details. Removing th
 
 **Drunkard (Wretched) > Alcoholic drinks**
 
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) (takes over the control if it's installed)
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) - takes over the drinks classification if it's installed
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
 
