@@ -130,7 +130,7 @@ All trait modules need to be loaded after the `CharacterTraitsFramework.omwscrip
 Mods which need be loaded before the Traits Framework for traits to work properly:
 
 - [Reading is Good](https://www.nexusmods.com/morrowind/mods/58333) by hyacinth
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) by ownlyme and hyacinth
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) by ownlyme and hyacinth (version 1.8.6 or newer)
 
 Example:
 
