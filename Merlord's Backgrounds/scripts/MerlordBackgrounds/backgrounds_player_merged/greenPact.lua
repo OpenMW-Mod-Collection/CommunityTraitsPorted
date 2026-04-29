@@ -38,6 +38,7 @@ local function onConsume(item)
         if sd.m_hunger then
             sd.m_hunger.hunger = sd.m_hunger.hunger + res.foodValue * 1.5
             sd.m_hunger.foodProfiles["broken pact"] = 180
+            I.SunsDusk.refreshNeeds("hunger")
             self:sendEvent("ShowMessage", { message = "The Green Pact prohibits you from eating this." })
         end
     end

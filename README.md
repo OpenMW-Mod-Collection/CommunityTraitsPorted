@@ -157,7 +157,7 @@ Safe to install mid-playthrough. For updating check release details. Removing th
 
 **Green Pact (Merlord's) > Green pact-friendly foods**
 
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) - instead of blocking non-GP food, you'd be able to feast it a cost of instant Broken Pact and negative satiation. You can eat it, but you really shouldn't
+- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) version 1.8.6 or newer - instead of blocking non-GP food, you'd be able to feast it a cost of instant Broken Pact and negative satiation. You can eat it, but you really shouldn't
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
 - [Devilish Vampire Overhaul](https://www.nexusmods.com/morrowind/mods/52969)
