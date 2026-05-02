@@ -7,7 +7,7 @@ local I = require("openmw.interfaces")
 local self = require("openmw.self")
 local core = require("openmw.core")
 
-local buttonTemplate = require("scripts.MerlordBackgrounds.utils.button")
+local buttonTemplate = require("scripts.WretchedAndWeird.utils.button")
 
 local textSize = 16
 

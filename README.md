@@ -2,10 +2,6 @@
 
 Select your character's past that will shape his future. Almost 300 traits across 4 types to choose from!
 
-<p align="center">
-    <img src="media/modathonHeader.png" alt="Modathon 2026">
-</p>
-
 This is an effort to port some community-made traits based on [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) or MTR's mods to OpenMW based on Character Traits Framework.
 
 ## Traits

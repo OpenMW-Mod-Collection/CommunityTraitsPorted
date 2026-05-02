@@ -4,6 +4,7 @@ local self = require("openmw.self")
 local selfSkills = self.type.stats.skills
 local selfAttrs = self.type.stats.attributes
 
+local raceCheckers = require("scripts.mtrCultures.utils.raceGroups")
 local traitType = require("scripts.mtrCultures.utils.traitTypes").culture
 local skills = {
     acrobatics  = selfSkills.acrobatics(self),
@@ -77,19 +78,6 @@ local function getRaceId(player)
     return player.type.records[player.recordId].race
 end
 
-local function isKhajiit(player)
-    local playerRace = player.type.records[player.recordId].race
-    local khajiitRaces = {
-        ["khajiit"] = true,
-        ["t_els_cathay"] = true,
-        ["t_els_cathay-raht"] = true,
-        ["t_els_ohmes"] = true,
-        ["t_els_ohmes-raht"] = true,
-        ["t_els_suthay"] = true,
-    }
-    return khajiitRaces[playerRace]
-end
-
 I.CharacterTraits.addTrait {
     id = "agrunornim",
     type = traitType,
@@ -120,7 +108,7 @@ I.CharacterTraits.addTrait {
         skills.mysticism.base   = skills.mysticism.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -153,7 +141,7 @@ I.CharacterTraits.addTrait {
         skills.mediumArmor.base = skills.mediumArmor.base - 10
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -182,7 +170,7 @@ I.CharacterTraits.addTrait {
         skills.conjuration.base = skills.conjuration.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -214,7 +202,7 @@ I.CharacterTraits.addTrait {
         skills.security.base    = skills.security.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -240,7 +228,7 @@ I.CharacterTraits.addTrait {
         attrs.strength.base = attrs.strength.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -272,7 +260,7 @@ I.CharacterTraits.addTrait {
         skills.security.base    = skills.security.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -1557,7 +1545,7 @@ I.CharacterTraits.addTrait {
         skills.unarmored.base  = skills.unarmored.base - 5
     end,
     checkDisabled = function()
-        return not isKhajiit(self)
+        return not raceCheckers.isKhajiit(self)
     end
 }
 
@@ -1589,7 +1577,7 @@ I.CharacterTraits.addTrait {
         skills.mercantile.base  = skills.mercantile.base - 5
     end,
     checkDisabled = function()
-        return not isKhajiit(self)
+        return not raceCheckers.isKhajiit(self)
     end
 }
 
@@ -1621,7 +1609,7 @@ I.CharacterTraits.addTrait {
         skills.longBlade.base   = skills.longBlade.base - 5
     end,
     checkDisabled = function()
-        return not isKhajiit(self)
+        return not raceCheckers.isKhajiit(self)
     end
 }
 
@@ -1643,7 +1631,7 @@ I.CharacterTraits.addTrait {
         selfSpells:add("mtrCultures_Baandari")
     end,
     checkDisabled = function()
-        return not isKhajiit(self)
+        return not raceCheckers.isKhajiit(self)
     end
 }
 
@@ -1670,7 +1658,7 @@ I.CharacterTraits.addTrait {
         skills.axe.base         = skills.axe.base - 5
     end,
     checkDisabled = function()
-        return not isKhajiit(self)
+        return not raceCheckers.isKhajiit(self)
     end
 }
 

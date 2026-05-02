@@ -4,6 +4,7 @@ local self = require("openmw.self")
 local selfSkills = self.type.stats.skills
 local selfAttrs = self.type.stats.attributes
 
+local raceCheckers = require("scripts.mtrCultures.utils.raceGroups")
 local traitType = require("scripts.mtrCultures.utils.traitTypes").culture
 local skills = {
     acrobatics  = selfSkills.acrobatics(self),
@@ -171,7 +172,7 @@ I.CharacterTraits.addTrait {
         skills.security.base    = skills.security.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -201,7 +202,7 @@ I.CharacterTraits.addTrait {
         skills.block.base       = skills.block.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -229,7 +230,7 @@ I.CharacterTraits.addTrait {
         skills.block.base       = skills.block.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -255,7 +256,7 @@ I.CharacterTraits.addTrait {
         skills.block.base       = skills.block.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 
@@ -284,17 +285,6 @@ I.CharacterTraits.addTrait {
         skills.alchemy.base    = skills.alchemy.base - 5
         skills.enchant.base    = skills.enchant.base - 5
     end,
-    checkDisabled = function()
-        local playerRace = getRaceId(self)
-        local nonCulturedRace = true
-        for _, raceId in pairs(races) do
-            if playerRace == raceId then
-                nonCulturedRace = false
-                break
-            end
-        end
-        return not nonCulturedRace
-    end
 }
 
 I.CharacterTraits.addTrait {
@@ -316,17 +306,6 @@ I.CharacterTraits.addTrait {
 
         attrs.strength.base = attrs.strength.base - 5
     end,
-    checkDisabled = function()
-        local playerRace = getRaceId(self)
-        local nonCulturedRace = true
-        for _, raceId in pairs(races) do
-            if playerRace == raceId then
-                nonCulturedRace = false
-                break
-            end
-        end
-        return not nonCulturedRace
-    end
 }
 
 I.CharacterTraits.addTrait {
@@ -355,15 +334,4 @@ I.CharacterTraits.addTrait {
         skills.illusion.base    = skills.illusion.base - 5
         skills.restoration.base = skills.restoration.base - 5
     end,
-    checkDisabled = function()
-        local playerRace = getRaceId(self)
-        local nonCulturedRace = true
-        for _, raceId in pairs(races) do
-            if playerRace == raceId then
-                nonCulturedRace = false
-                break
-            end
-        end
-        return not nonCulturedRace
-    end
 }

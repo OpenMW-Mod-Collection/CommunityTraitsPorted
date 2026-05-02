@@ -4,6 +4,7 @@ local self = require("openmw.self")
 local selfSkills = self.type.stats.skills
 local selfAttrs = self.type.stats.attributes
 
+local raceCheckers = require("scripts.mtrLineages.utils.raceGroups")
 local traitType = require("scripts.mtrLineages.utils.traitTypes").lineage
 local skills = {
     acrobatics  = selfSkills.acrobatics(self),
@@ -1956,6 +1957,7 @@ I.CharacterTraits.addTrait {
             ["khajiit"] = true,
             ["t_els_cathay"] = true,
             ["t_els_cathay-raht"] = true,
+            ["t_els_dagi-raht"] = true,
             ["t_els_ohmes"] = true,
             ["t_els_ohmes-raht"] = true,
             ["t_els_suthay"] = true,
@@ -2086,7 +2088,7 @@ I.CharacterTraits.addTrait {
         attrs.personality.base  = attrs.personality.base - 10
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['orc']
+        return not raceCheckers.isOrc(self)
     end
 }
 

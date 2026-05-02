@@ -7,6 +7,7 @@ local async = require("openmw.async")
 
 local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").background
 local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
+local raceCheckers = require("scripts.MerlordBackgrounds.utils.raceGroups")
 
 local period = time.minute
 local slaversSpawned = 0
@@ -69,18 +70,7 @@ I.CharacterTraits.addTrait {
         "Requirements: Khajiit or Argonian only."
     ),
     checkDisabled = function()
-        ---@diagnostic disable-next-line: undefined-field
-        local playerRace = self.type.records[self.recordId].race
-        local slaveRaces = {
-            ["argonian"] = true,
-            ["khajiit"] = true,
-            ["t_els_cathay"] = true,
-            ["t_els_cathay-raht"] = true,
-            ["t_els_ohmes"] = true,
-            ["t_els_ohmes-raht"] = true,
-            ["t_els_suthay"] = true,
-        }
-        return not slaveRaces[playerRace]
+        return not raceCheckers.isKhajiit(self)
     end,
     doOnce = function()
         core.sendGlobalEvent(

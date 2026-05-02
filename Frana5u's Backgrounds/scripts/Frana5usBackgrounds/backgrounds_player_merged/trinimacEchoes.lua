@@ -4,6 +4,7 @@ local self = require("openmw.self")
 local time = require("openmw_aux.time")
 
 local traitType = require("scripts.Frana5usBackgrounds.utils.traitTypes").background
+local raceCheckers = require("scripts.Frana5usBackgrounds.utils.raceGroups")
 
 local period = 1
 
@@ -26,8 +27,7 @@ I.CharacterTraits.addTrait {
         "> Both spell and ability are lost permanently on bounty of 40 or higher"
     ),
     checkDisabled = function()
-        ---@diagnostic disable-next-line: undefined-field
-        return self.type.records[self.recordId].race ~= "orc"
+        return not raceCheckers.isOrc(self)
     end,
     doOnce = function()
         local selfSkills = self.type.stats.skills

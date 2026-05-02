@@ -2,13 +2,14 @@ local I = require("openmw.interfaces")
 local self = require("openmw.self")
 
 local traitType = require("scripts.Frana5usBackgrounds.utils.traitTypes").background
+local raceCheckers = require("scripts.Frana5usBackgrounds.utils.raceGroups")
 
 I.CharacterTraits.addTrait {
     id = "clawdancer",
     type = traitType,
     name = "Claw-Dancer",
     description = (
-        "You have studied your people's martial arts in the monasteries in Elsweyr, and have grown skilled in them. "..
+        "You have studied your people's martial arts in the monasteries in Elsweyr, and have grown skilled in them. " ..
         "However, because of this you have no skills in fighting in any kind of armor.\n" ..
         "\n" ..
         "Requirements: Khajiits only.\n" ..
@@ -19,8 +20,7 @@ I.CharacterTraits.addTrait {
         "> You start with an offensive Claw-Dance power"
     ),
     checkDisabled = function()
-        ---@diagnostic disable-next-line: undefined-field
-        return self.type.records[self.recordId].race ~= "khajiit"
+        return not raceCheckers.isKhajiit(self)
     end,
     doOnce = function()
         local selfSkills = self.type.stats.skills
