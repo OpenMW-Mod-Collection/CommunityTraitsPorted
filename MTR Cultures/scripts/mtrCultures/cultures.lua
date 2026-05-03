@@ -1,10 +1,10 @@
 local I = require("openmw.interfaces")
 local self = require("openmw.self")
-local core = require("openmw.core")
 
 local selfSkills = self.type.stats.skills
 local selfAttrs = self.type.stats.attributes
 
+local deps = require("scripts.mtrCultures.utils.dependencies")
 local raceCheckers = require("scripts.mtrCultures.utils.raceGroups")
 local traitType = require("scripts.mtrCultures.utils.traitTypes").culture
 local skills = {
@@ -79,60 +79,10 @@ local function getRaceId(player)
     return player.type.records[player.recordId].race
 end
 
----@diagnostic disable: duplicate-doc-field
-
----@class Dependency
----@field plugin      string   esp/omwaddon/omwscripts filename of the required plugin
----@field interface   any      The interface object retrieved from the other mod
----@field minVersion  number|nil
----@field curVersion  number|nil
-
----@param dep  Dependency
----@return     boolean, string|nil
-local function checkDependency(dep)
-    local checks = {
-        {
-            ok  = core.contentFiles.has(dep.plugin:lower()),
-            msg = ("'%s' dependency not found."):format(dep.plugin)
-        },
-        {
-            ok  = dep.interface ~= nil,
-            msg = ("'%s' has to be loaded before this mod."):format(dep.plugin)
-        },
-        {
-            ok  = not dep.minVersion or dep.curVersion >= dep.minVersion,
-            msg = ("'%s' version too low. Required %s, found %s.")
-                :format(dep.plugin, tostring(dep.minVersion), tostring(dep.curVersion))
-        },
-    }
-    for _, c in ipairs(checks) do
-        if not c.ok then
-            return false, c.msg
-        end
-    end
-    return true
-end
-
----@param modName  string
----@param depList  Dependency[]
-local function checkAll(modName, depList)
-    local errors = {}
-    for _, dep in ipairs(depList) do
-        local ok, msg = checkDependency(dep)
-        if not ok then
-            errors[#errors + 1] = msg
-        end
-    end
-    if #errors > 0 then
-        local msg = ("[%s]\nDependency error.\n\n%s\n"):format(modName, table.concat(errors, "\n\n"))
-        I.UI.showInteractiveMessage(msg)
-    end
-end
-
-checkAll("MTR Cultures", {
+deps.checkAll("MTR Cultures", { {
     plugin = "CharacterTraitsFramework.omwscripts",
     interface = I.CharacterTraits,
-})
+} })
 
 I.CharacterTraits.addTrait {
     id = "agrunornim",

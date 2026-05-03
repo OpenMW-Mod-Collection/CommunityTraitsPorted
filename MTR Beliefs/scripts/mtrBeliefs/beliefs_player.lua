@@ -5,7 +5,8 @@ local core = require("openmw.core")
 local selfSkills = self.type.stats.skills
 local selfAttrs = self.type.stats.attributes
 
-local traitType = require("scripts.mtrCultures.utils.traitTypes").belief
+local deps = require("scripts.mtrBeliefs.utils.dependencies")
+local traitType = require("scripts.mtrBeliefs.utils.traitTypes").belief
 local skills = {
     acrobatics  = selfSkills.acrobatics(self),
     alchemy     = selfSkills.alchemy(self),
@@ -65,68 +66,18 @@ local selfSpells = self.type.spells(self)
 --     ["wood elf"] = "wood elf",
 --     bosmer       = "wood elf",
 --     -- TR
-    -- reachman     = "t_sky_reachman",
-    -- cathay       = "t_els_cathay",
-    -- cathayRaht   = "t_els_cathay-raht",
-    -- ohmes        = "t_els_ohmes",
-    -- ohmesRaht    = "t_els_ohmes-raht",
-    -- suthay       = "t_els_suthay",
+-- reachman     = "t_sky_reachman",
+-- cathay       = "t_els_cathay",
+-- cathayRaht   = "t_els_cathay-raht",
+-- ohmes        = "t_els_ohmes",
+-- ohmesRaht    = "t_els_ohmes-raht",
+-- suthay       = "t_els_suthay",
 -- }
 
----@diagnostic disable: duplicate-doc-field
-
----@class Dependency
----@field plugin      string   esp/omwaddon/omwscripts filename of the required plugin
----@field interface   any      The interface object retrieved from the other mod
----@field minVersion  number|nil
----@field curVersion  number|nil
-
----@param dep  Dependency
----@return     boolean, string|nil
-local function checkDependency(dep)
-    local checks = {
-        {
-            ok  = core.contentFiles.has(dep.plugin:lower()),
-            msg = ("'%s' dependency not found."):format(dep.plugin)
-        },
-        {
-            ok  = dep.interface ~= nil,
-            msg = ("'%s' has to be loaded before this mod."):format(dep.plugin)
-        },
-        {
-            ok  = not dep.minVersion or dep.curVersion >= dep.minVersion,
-            msg = ("'%s' version too low. Required %s, found %s.")
-                :format(dep.plugin, tostring(dep.minVersion), tostring(dep.curVersion))
-        },
-    }
-    for _, c in ipairs(checks) do
-        if not c.ok then
-            return false, c.msg
-        end
-    end
-    return true
-end
-
----@param modName  string
----@param depList  Dependency[]
-local function checkAll(modName, depList)
-    local errors = {}
-    for _, dep in ipairs(depList) do
-        local ok, msg = checkDependency(dep)
-        if not ok then
-            errors[#errors + 1] = msg
-        end
-    end
-    if #errors > 0 then
-        local msg = ("[%s]\nDependency error.\n\n%s\n"):format(modName, table.concat(errors, "\n\n"))
-        I.UI.showInteractiveMessage(msg)
-    end
-end
-
-checkAll("MTR Beliefs", {
+deps.checkAll("MTR Beliefs", { {
     plugin = "CharacterTraitsFramework.omwscripts",
     interface = I.CharacterTraits,
-})
+} })
 
 
 I.CharacterTraits.addTrait {
@@ -1685,10 +1636,10 @@ I.CharacterTraits.addTrait {
         "Sheogorath, but they suffer from Madness and penalty to random Attributes. "
     ),
     doOnce = function()
-		local madC = math.random(-5, 5)
-		local madM = math.random(-5, 5)
-		local madT = math.random(-5, 5)
-		local madB = math.random(-5, 5)
+        local madC = math.random(-5, 5)
+        local madM = math.random(-5, 5)
+        local madT = math.random(-5, 5)
+        local madB = math.random(-5, 5)
 
         attrs.strength.base = attrs.strength.base + (madC - madB)
         attrs.endurance.base = attrs.endurance.base + (-madC - madC)

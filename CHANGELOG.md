@@ -1,5 +1,10 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.1
+
+- All traits: Fixed dependency checking
+- MTR Beliefs: Fixed it being dependant on MTR Cultures for no reason
+
 ## 1.1
 
 - All traits: Added a Traits Framework dependency check

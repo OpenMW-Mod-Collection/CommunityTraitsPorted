@@ -2,6 +2,8 @@
 local core = require("openmw.core")
 local I = require("openmw.interfaces")
 
+local deps = {}
+
 ---@class Dependency
 ---@field plugin      string   esp/omwaddon/omwscripts filename of the required plugin
 ---@field interface   any      The interface object retrieved from the other mod
@@ -36,7 +38,7 @@ end
 
 ---@param modName  string
 ---@param depList  Dependency[]
-local function checkAll(modName, depList)
+deps.checkAll = function(modName, depList)
     local errors = {}
     for _, dep in ipairs(depList) do
         local ok, msg = checkDependency(dep)
@@ -50,7 +52,4 @@ local function checkAll(modName, depList)
     end
 end
 
-checkAll("The Wretched and The Wierd", {
-    plugin = "CharacterTraitsFramework.omwscripts",
-    interface = I.CharacterTraits,
-})
+return deps
