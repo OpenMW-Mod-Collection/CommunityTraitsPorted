@@ -38,6 +38,31 @@ I.CharacterTraits.addTrait {
     end
 }
 
+local function countFriendlyRats()
+    local myFollowers = {}
+    local followerList = I.FollowerDetectionUtil.getFollowerList()
+    if not followerList or not next(followerList) then
+        return 0
+    end
+
+    for _, state in pairs(followerList) do
+        local isMyFollower = state.leader and state.leader.id == self.id
+            or state.superLeader and state.superLeader.id == self.id
+        if isMyFollower then
+            myFollowers[#myFollowers + 1] = state.actor
+        end
+    end
+
+    local ratCount = 0
+    for _, follower in ipairs(myFollowers) do
+        if rats.isRat(follower) then
+            ratCount = ratCount + 1
+        end
+    end
+
+    return ratCount
+end
+
 local function localEnemyTargetChanged(data)
     if not bgPicked then return end
 
@@ -55,7 +80,14 @@ local function localEnemyTargetChanged(data)
         local inWild = self.cell
             and not self.cell:hasTag("NoSleep")
             and (self.cell.isExterior or self.cell.isQuasiExterior)
-        if offCooldown and randomProc and inWild then
+        local currRatCount = I.FollowerDetectionUtil
+            and countFriendlyRats()
+            or 0
+        if offCooldown
+            and randomProc
+            and inWild
+            and currRatCount < settings:get("hordeLimit")
+        then
             lastRatSpawn = core.getSimulationTime()
             local spawnData = {
                 player = self,

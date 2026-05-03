@@ -18,3 +18,10 @@ spawnChance_name: Horde Chance (%)
 spawnChance_desc: The chance is rolled for every individual aggressive actor.
 minSpawn_name: Minimum Rats in a Horde
 maxSpawn_name: Maximum Rats in a Horde
+hordeLimit_name: Horde Limit
+hordeLimit_desc: |
+  Stops hordes from occuring if you already have a lot of rats following you.
+
+  Set it to 0 to disable hodes.
+
+  Requires Follower Detection Util to work.

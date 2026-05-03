@@ -157,7 +157,6 @@ Safe to install mid-playthrough. For updating check release details. Removing th
 
 **Green Pact (Merlord's) > Green pact-friendly foods**
 
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) version 1.8.6 or newer - instead of blocking non-GP food, you'd be able to feast it a cost of instant Broken Pact and negative satiation. You can eat it, but you really shouldn't
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
 - [Devilish Vampire Overhaul](https://www.nexusmods.com/morrowind/mods/52969)
@@ -169,13 +168,23 @@ Safe to install mid-playthrough. For updating check release details. Removing th
 
 **Drunkard (Wretched) > Alcoholic drinks**
 
-- [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) - takes over the drinks classification if it's installed
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537)
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042)
 
-**Bookworm (Frana5u's)**
+### Integrations
 
-- [Reading is Good](https://www.nexusmods.com/morrowind/mods/58333) - instead of doubling the skill points gained from reading a skill book, you receive an additional 50% more skill gain bonus (value is based on RiG's settings)
+#### [Sun's Dusk](https://www.nexusmods.com/morrowind/mods/57526) version 1.8.6 or newer
+
+- **Green Pact (Merlord's)** > Instead of blocking non-GP food, you'd be able to feast it a cost of instant Broken Pact and negative satiation. You can eat it, but you really shouldn't. It also takes over the food classification for consistency
+- **Drunkard (Wretched)** > Takes over the drinks classification if it's installed
+
+#### [Reading is Good](https://www.nexusmods.com/morrowind/mods/58333)
+
+- **Bookworm (Frana5u's)** > Instead of doubling the skill points gained from reading a skill book, you receive an additional 50% more skill gain bonus (value is based on RiG's settings)
+
+#### [Follower Detection Utils](https://www.nexusmods.com/morrowind/mods/58053)
+
+- **Rat King (Merlord's)** > Unlocks an option to stop hordes if you already have too many rats followeing you
 
 ## Recommended Mods
 

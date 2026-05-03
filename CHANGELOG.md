@@ -1,5 +1,11 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1
+
+- All traits: Added a Traits Framework dependency check
+- MTR Lineages: Fixed errors preventing player from selecting Breton and Half-Breton lineages
+- Merlord's Background: Added horde limit setting (optional, requires Follower Detection Util)
+
 ## 1.0.1
 
 - The Wretched and The Weird: Fixed Wretch's UI being dependant on Merlord's Backgrounds for no reason

@@ -75,5 +75,13 @@ I.Settings.registerGroup {
             renderer = 'number',
             default = 5,
         },
+        {
+            key = 'hordeLimit',
+            name = 'hordeLimit_name',
+            description = 'hordeLimit_desc',
+            renderer = 'number',
+            default = 15,
+            min = 0,
+        },
     }
 }
