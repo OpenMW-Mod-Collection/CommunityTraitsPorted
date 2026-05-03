@@ -1,5 +1,9 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.2
+
+- Merlord's Backgrounds: Fixed Escaped Slave background not being available to argonians
+
 ## 1.1.1
 
 - All traits: Fixed dependency checking
@@ -9,7 +13,7 @@
 
 - All traits: Added a Traits Framework dependency check
 - MTR Lineages: Fixed errors preventing player from selecting Breton and Half-Breton lineages
-- Merlord's Background: Added horde limit setting (optional, requires Follower Detection Util)
+- Merlord's Backgrounds: Added horde limit setting (optional, requires Follower Detection Util)
 
 ## 1.0.1
 
