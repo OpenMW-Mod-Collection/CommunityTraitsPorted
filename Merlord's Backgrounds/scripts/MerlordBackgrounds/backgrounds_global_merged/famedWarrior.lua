@@ -34,6 +34,7 @@ local function upgradeSword(data)
         data.player,
         data.player.type.EQUIPMENT_SLOT.CarriedRight
     )
+    local oldSwordRecord = oldSword.type.records[oldSword.recordId]
     oldSword:remove()
 
     local swordLevel = data.swordLevel
@@ -62,6 +63,7 @@ local function upgradeSword(data)
     local newSwordRecord = world.createRecord(
         types.Weapon.createRecordDraft {
             template        = swordInitRecord,
+            name            = oldSwordRecord.name,
             enchant         = newEnchRecord.id,
             chopMaxDamage   = swordInitRecord.chopMaxDamage + maxDamagePerRival * swordLevel,
             chopMinDamage   = swordInitRecord.chopMinDamage + minDamagePerRival * swordLevel,

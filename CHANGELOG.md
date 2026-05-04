@@ -1,5 +1,9 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.3
+
+- Merlord's Backgrounds: Fixed Famed Warrior's sword resetting the name on upgrade
+
 ## 1.1.2
 
 - Merlord's Backgrounds: Fixed Escaped Slave background not being available to argonians
