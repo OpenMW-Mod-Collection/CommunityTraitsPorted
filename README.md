@@ -153,6 +153,11 @@ Compatible with basically any mods.
 
 Safe to install mid-playthrough. For updating check release details. Removing the mod might not revert all effects of the picked traits.
 
+### Known Issues
+
+[Natural Character Growth](https://www.nexusmods.com/morrowind/mods/57801)  
+You might end up starting your game at level higher than 1. I plan on fixing it in the future, but it will take some time.
+
 ### Supported mods
 
 **Green Pact (Merlord's) > Green pact-friendly foods**

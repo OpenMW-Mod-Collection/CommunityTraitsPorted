@@ -1034,8 +1034,10 @@ I.CharacterTraits.addTrait {
     type = traitType,
     name = "Nede",
     description = (
-        "Nedes were a man tribe or group of tribes inhabiting Tamriel in early eras./n/nAdmixture " ..
-        "of Nede blood flowing in your veins grants you resistance to non-elemental magicka at a " ..
+        "Nedes were a man tribe or group of tribes inhabiting Tamriel in early eras. " ..
+        "\n" ..
+        "\n" ..
+        "Admixture of Nede blood flowing in your veins grants you resistance to non-elemental magicka at a " ..
         "cost of weakness to fire. " ..
         "\n" ..
         "\n" ..

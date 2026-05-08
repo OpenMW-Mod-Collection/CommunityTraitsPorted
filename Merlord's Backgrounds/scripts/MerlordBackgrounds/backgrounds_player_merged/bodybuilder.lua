@@ -34,7 +34,7 @@ I.CharacterTraits.addTrait {
         "mesmerized by your good looks, people quickly realize how boring you are.\n" ..
         "\n" ..
         "+10 Personality when your chest is visible\n" ..
-        "-10 Perosnality otherwise"
+        "-10 Personality otherwise"
     ),
     doOnce = function()
         updateAllStats(10)

@@ -1,5 +1,10 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.4
+
+- Merlord's Backgrounds: Fixed a typo in Bodybuilder bg
+- MTR Lineages:  Fixed a typo in Nede lineage
+
 ## 1.1.3
 
 - Merlord's Backgrounds: Fixed Famed Warrior's sword resetting the name on upgrade
