@@ -14,7 +14,7 @@ local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
 -- local maxDelay = 7
 local period = time.minute
 local minDelay = 1 * time.hour
-local maxDelay = 7 * time.day -- why such a long delay? so it would be sudden, ofc
+local maxDelay = 3 * time.day -- why such a long delay? so it would be sudden, ofc
 local rivalsSpawned = 0
 local timerStarted = false
 local spawnDistance = 300
@@ -53,7 +53,7 @@ local spawnRival = async:registerTimerCallback(
 )
 
 local function checkLevel()
-    if rivalsSpawned > #rivals then
+    if rivalsSpawned >= #rivals then
         stopTimer()
         return
     end

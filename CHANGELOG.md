@@ -1,5 +1,10 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.5
+
+- All Traits: Fixed and improved the dependency checking module
+- Merlord's Backgrounds: Lowered max enemy arrival delay from 7 days to 3 days. Affects Famed Warrior, Escaped Slave and Blood of Dremora
+
 ## 1.1.4
 
 - Merlord's Backgrounds: Fixed a typo in Bodybuilder bg

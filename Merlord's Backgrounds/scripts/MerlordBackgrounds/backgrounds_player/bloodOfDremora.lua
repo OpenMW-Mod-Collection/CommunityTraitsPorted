@@ -12,7 +12,7 @@ local period = time.minute
 local dremorasSpawned = 0
 local timerStarted = false
 local minDelay = 1 * time.hour
-local maxDelay = 7 * time.day -- why such a long delay? so it would be sudden, ofc
+local maxDelay = 3 * time.day -- why such a long delay? so it would be sudden, ofc
 local spawnDistance = 300
 local selfName = self.type.records[self.recordId].name
 
