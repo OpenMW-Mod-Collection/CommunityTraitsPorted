@@ -36,6 +36,7 @@ I.CharacterTraits.addTrait {
 
         selfSpells:add("MB_denial")
         selfSpells:add("MB_sceptic")
+        selfSpells:add("MB_stir")
 
         selfActiveEffects:remove("resistcommondisease")
     end,

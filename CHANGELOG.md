@@ -1,5 +1,10 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.6
+
+- Merlord's Backgrounds: Fixed inverted bonuses for Bodybuilder
+- Frana5u's Backgrounds: Fixed Frenzy spell not being given for the Denying the Green background. It won't retroactively be given to you on existing saves, so alternatively you can run `player->addspell MB_stir` in the console
+
 ## 1.1.5
 
 - All Traits: Fixed and improved the dependency checking module

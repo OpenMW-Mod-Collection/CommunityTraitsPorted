@@ -10,7 +10,7 @@ local period = 1
 
 local function updateAllStats(amount)
     local personality = self.type.stats.attributes.personality(self)
-    local direction = absVisible and -1 or 1
+    local direction = absVisible and 1 or -1
     personality.base = personality.base + amount * direction
 end
 
