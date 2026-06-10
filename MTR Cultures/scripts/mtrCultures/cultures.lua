@@ -231,7 +231,11 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Sagraornim")
 
-        attrs.strength.base = attrs.strength.base - 5
+        skills.block.base       = skills.block.base - 10
+        skills.heavyArmor.base  = skills.heavyArmor.base - 10
+        skills.mediumArmor.base = skills.mediumArmor.base - 10
+        attrs.strength.base     = attrs.strength.base - 5
+        attrs.strength.base     = attrs.strength.base - 5
     end,
     checkDisabled = function()
         return not raceCheckers.isOrc(self)
@@ -320,7 +324,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Dirennis")
 
-        attrs.agility.base = attrs.agility.base - 5
+        skills.destruction.base = skills.destruction.base - 5
+        skills.illusion.base    = skills.illusion.base - 5
+        skills.restoration.base = skills.restoration.base - 5
+        skills.sneak.base       = skills.sneak.base - 5
+        skills.axe.base         = skills.axe.base - 5
+        skills.longBlade.base   = skills.longBlade.base - 5
+        attrs.agility.base      = attrs.agility.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         local playerRace = getRaceId(self)
@@ -504,7 +515,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Nitus")
 
-        attrs.strength.base = attrs.strength.base - 5
+        skills.alchemy.base     = skills.alchemy.base - 5
+        skills.armorer.base     = skills.alchemy.base - 5
+        skills.enchant.base     = skills.alchemy.base - 5
+        skills.heavyArmor.base  = skills.alchemy.base - 5
+        skills.mercantile.base  = skills.alchemy.base - 5
+        skills.speechcraft.base = skills.alchemy.base - 5
+        attrs.strength.base     = attrs.strength.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['argonian']
@@ -559,7 +577,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Cayalura")
 
-        attrs.strength.base = attrs.strength.base - 5
+        skills.alchemy.base     = skills.alchemy.base - 5
+        skills.mediumArmor.base = skills.mediumArmor.base - 5
+        skills.heavyArmor.base  = skills.heavyArmor.base - 5
+        skills.mysticism.base   = skills.mysticism.base - 5
+        skills.spear.base       = skills.spear.base - 5
+        skills.longBlade.base   = skills.longBlade.base - 5
+        attrs.strength.base     = attrs.strength.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['argonian']
@@ -709,7 +734,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Armunan")
 
-        attrs.willpower.base = attrs.willpower.base - 5
+        skills.athletics.base   = skills.athletics.base - 5
+        skills.destruction.base = skills.destruction.base - 5
+        skills.longBlade.base   = skills.longBlade.base - 5
+        skills.mysticism.base   = skills.mysticism.base - 5
+        skills.heavyArmor.base  = skills.heavyArmor.base - 5
+        skills.conjuration.base = skills.conjuration.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
+        attrs.willpower.base    = attrs.willpower.base - 5
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['dark elf']
@@ -827,6 +859,15 @@ I.CharacterTraits.addTrait {
     ),
     doOnce = function()
         selfSpells:add("mtrCultures_Velothi")
+
+        skills.mysticism.base   = skills.mysticism.base - 5
+        skills.speechcraft.base = skills.speechcraft.base - 5
+        skills.alteration.base  = skills.alteration.base - 5
+        skills.destruction.base = skills.destruction.base - 5
+        skills.shortBlade.base  = skills.shortBlade.base - 5
+        skills.heavyArmor.base  = skills.heavyArmor.base - 5
+        attrs.personality.base  = attrs.personality.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['dark elf']
@@ -979,7 +1020,12 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Anam")
 
+        skills.acrobatics.base = skills.acrobatics.base - 10
+        skills.sneak.base = skills.acrobatics.base - 10
+        skills.speechcraft.base = skills.speechcraft.base - 5
+        skills.marksman.base = skills.marksman.base - 5
         attrs.personality.base = attrs.personality.base - 5
+        attrs.endurance.base = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['wood elf']
@@ -1093,7 +1139,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Elinhi")
 
-        attrs.strength.base = attrs.strength.base - 5
+        skills.heavyArmor.base  = skills.heavyArmor.base - 5
+        skills.bluntWeapon.base = skills.bluntWeapon.base - 5
+        skills.axe.base         = skills.axe.base - 5
+        skills.longBlade.base   = skills.longBlade.base - 5
+        skills.mediumArmor.base = skills.mediumArmor.base - 5
+        skills.athletics.base   = skills.athletics.base - 5
+        attrs.strength.base     = attrs.strength.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['redguard']
@@ -1203,7 +1256,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Ragada")
 
-        attrs.willpower.base = attrs.willpower.base - 5
+        skills.heavyArmor.base  = skills.heavyArmor.base - 5
+        skills.bluntWeapon.base = skills.bluntWeapon.base - 5
+        skills.axe.base         = skills.axe.base - 5
+        skills.longBlade.base   = skills.longBlade.base - 5
+        skills.illusion.base    = skills.illusion.base - 5
+        skills.mysticism.base   = skills.mysticism.base - 5
+        attrs.willpower.base    = attrs.willpower.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['redguard']
@@ -1261,7 +1321,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Froesselvirker")
 
-        attrs.strength.base = attrs.strength.base - 5
+        skills.axe.base         = skills.axe.base - 5
+        skills.bluntWeapon.base = skills.bluntWeapon.base - 5
+        skills.mediumArmor.base = skills.mediumArmor.base - 5
+        skills.heavyArmor.base  = skills.heavyArmor.base - 5
+        skills.longBlade.base   = skills.longBlade.base - 5
+        skills.spear.base       = skills.spear.base - 5
+        attrs.strength.base     = attrs.strength.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['nord']
@@ -1286,7 +1353,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Nyihalder")
 
-        attrs.willpower.base = attrs.willpower.base - 5
+        skills.axe.base         = skills.axe.base - 5
+        skills.bluntWeapon.base = skills.bluntWeapon.base - 5
+        skills.mediumArmor.base = skills.mediumArmor.base - 5
+        skills.heavyArmor.base  = skills.heavyArmor.base - 5
+        skills.longBlade.base   = skills.longBlade.base - 5
+        skills.spear.base       = skills.spear.base - 5
+        attrs.willpower.base    = attrs.willpower.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['nord']
@@ -1375,7 +1449,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Osternish")
 
-        attrs.strength.base = attrs.strength.base - 5
+        skills.mediumArmor.base = skills.mediumArmor.base - 5
+        skills.heavyArmor.base  = skills.heavyArmor.base - 5
+        skills.longBlade.base   = skills.longBlade.base - 5
+        skills.spear.base       = skills.spear.base - 5
+        skills.athletics.base   = skills.athletics.base - 5
+        skills.block.base       = skills.block.base - 5
+        attrs.strength.base     = attrs.strength.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         local playerRace = getRaceId(self)
@@ -1403,7 +1484,14 @@ I.CharacterTraits.addTrait {
     doOnce = function()
         selfSpells:add("mtrCultures_Bayard")
 
-        attrs.strength.base = attrs.strength.base - 5
+        skills.marksman.base    = skills.marksman.base - 5
+        skills.alteration.base  = skills.alteration.base - 5
+        skills.acrobatics.base  = skills.acrobatics.base - 5
+        skills.axe.base         = skills.axe.base - 5
+        skills.bluntWeapon.base = skills.bluntWeapon.base - 5
+        skills.restoration.base = skills.restoration.base - 5
+        attrs.strength.base     = attrs.strength.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         local playerRace = getRaceId(self)
@@ -1635,6 +1723,15 @@ I.CharacterTraits.addTrait {
     ),
     doOnce = function()
         selfSpells:add("mtrCultures_Baandari")
+
+        skills.heavyArmor.base  = skills.heavyArmor.base - 5
+        skills.mediumArmor.base = skills.mediumArmor.base - 5
+        skills.spear.base       = skills.spear.base - 5
+        skills.axe.base         = skills.axe.base - 5
+        skills.longBlade.base   = skills.longBlade.base - 5
+        skills.destruction.base = skills.destruction.base - 5
+        attrs.strength.base     = attrs.strength.base - 5
+        attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
         return not raceCheckers.isKhajiit(self)

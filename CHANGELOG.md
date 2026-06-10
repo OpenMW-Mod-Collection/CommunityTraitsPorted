@@ -1,5 +1,9 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.7
+
+- MTR Cultures: Fixed multiple cultures not having all the debuffs (Dirennis, Sagra Ornim, Nitus, Caylura, Armun-An, Velothi, Anam, Elin-Hi, Ra'Gada, Froesselvirker, Nyihalder, Osternish, Bayard, Baandari)
+
 ## 1.1.6
 
 - Merlord's Backgrounds: Fixed inverted bonuses for Bodybuilder
