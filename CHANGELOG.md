@@ -1,5 +1,9 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.8
+
+- Wretched and Wierd: Removed Nudist's debug printing
+
 ## 1.1.7
 
 - MTR Cultures: Fixed multiple cultures not having all the debuffs (Dirennis, Sagra Ornim, Nitus, Caylura, Armun-An, Velothi, Anam, Elin-Hi, Ra'Gada, Froesselvirker, Nyihalder, Osternish, Bayard, Baandari)

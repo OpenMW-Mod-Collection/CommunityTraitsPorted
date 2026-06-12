@@ -62,7 +62,6 @@ I.CharacterTraits.addTrait {
         isNaked = checkNudes()
         time.runRepeatedly(
             function()
-                print(checkNudes(), isNaked)
                 if checkNudes() ~= isNaked then
                     isNaked = not isNaked
                     grantDynamicStats(isNaked and 1 or -1)
