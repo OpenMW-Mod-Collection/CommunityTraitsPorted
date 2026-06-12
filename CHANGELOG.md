@@ -2,7 +2,7 @@
 
 ## 1.1.8
 
-- Wretched and Wierd: Removed Nudist's debug printing
+- The Wretched and The Weird: Removed Nudist's debug printing
 
 ## 1.1.7
 
