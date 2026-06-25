@@ -85,3 +85,93 @@ I.Settings.registerGroup {
         },
     }
 }
+
+I.Settings.registerGroup {
+    key = 'SettingsMerlordBackgrounds_bloodOfDremora',
+    page = 'MerlordBackgrounds',
+    l10n = 'MerlordBackgrounds',
+    name = 'bloodOfDremora_groupName',
+    permanentStorage = true,
+    order = 1,
+    settings = {
+        {
+            key = 'BoD_minDelay',
+            name = 'BoD_minDelay_name',
+            renderer = 'number',
+            default = 1,
+        },
+        {
+            key = 'BoD_maxDelay',
+            name = 'BoD_maxDelay_name',
+            renderer = 'number',
+            default = 3 * 24,
+        },
+        {
+            key = 'BoD_levelsPerEnemy',
+            name = 'BoD_levelsPerEnemy_name',
+            description = 'BoD_levelsPerEnemy_desc',
+            renderer = 'number',
+            default = 2,
+        },
+    }
+}
+
+I.Settings.registerGroup {
+    key = 'SettingsMerlordBackgrounds_escapedSlave',
+    page = 'MerlordBackgrounds',
+    l10n = 'MerlordBackgrounds',
+    name = 'escapedSlave_groupName',
+    permanentStorage = true,
+    order = 1,
+    settings = {
+        {
+            key = 'ES_minDelay',
+            name = 'ES_minDelay_name',
+            renderer = 'number',
+            default = 1,
+        },
+        {
+            key = 'ES_maxDelay',
+            name = 'ES_maxDelay_name',
+            renderer = 'number',
+            default = 3 * 24,
+        },
+        {
+            key = 'ES_levelsPerEnemy',
+            name = 'ES_levelsPerEnemy_name',
+            description = 'ES_levelsPerEnemy_desc',
+            renderer = 'number',
+            default = 1,
+        },
+    }
+}
+
+I.Settings.registerGroup {
+    key = 'SettingsMerlordBackgrounds_famedWarrior',
+    page = 'MerlordBackgrounds',
+    l10n = 'MerlordBackgrounds',
+    name = 'famedWarrior_groupName',
+    permanentStorage = true,
+    order = 1,
+    settings = {
+        {
+            key = 'FW_minDelay',
+            name = 'FW_minDelay_name',
+            renderer = 'number',
+            default = 1,
+        },
+        {
+            key = 'FW_maxDelay',
+            name = 'FW_maxDelay_name',
+            renderer = 'number',
+            default = 3 * 24,
+        },
+        {
+            key = 'FW_levelsPerEnemy',
+            name = 'FW_levelsPerEnemy_name',
+            description = 'FW_levelsPerEnemy_desc',
+            renderer = 'number',
+            default = 1,
+        },
+    }
+}

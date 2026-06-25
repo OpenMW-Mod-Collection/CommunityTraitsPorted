@@ -4,17 +4,19 @@ local core = require("openmw.core")
 local time = require("openmw_aux.time")
 local async = require("openmw.async")
 local types = require("openmw.types")
+local storage = require("openmw.storage")
 
 local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").background
 local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
 
+local settings = storage.globalSection("SettingsMerlordBackgrounds_bloodOfDremora")
 local period = time.minute
-local dremorasSpawned = 0
-local timerStarted = false
-local minDelay = 1 * time.hour
-local maxDelay = 3 * time.day -- why such a long delay? so it would be sudden, ofc
 local spawnDistance = 300
 local selfName = self.type.records[self.recordId].name
+local level = self.type.stats.level(self)
+
+local dremorasSpawned = 0
+local timerStarted = false
 
 local introPhrases = {
     '"Give me back my blood, mortal!"',
@@ -27,7 +29,7 @@ local introPhrases = {
 local spawnDremora = async:registerTimerCallback(
     "spawnDremora",
     function()
-        local summonerLevel = self.type.stats.level(self).current
+        local summonerLevel = level.current
         local leveledRecord = types.LevelledCreature.records["mer_bg_dremList"]
         local dremoraId = leveledRecord.getRandomId(leveledRecord, summonerLevel)
         core.sendGlobalEvent(
@@ -52,11 +54,11 @@ local spawnDremora = async:registerTimerCallback(
 )
 
 local function checkLevel()
-    local readyForDremora = self.type.stats.level(self).current >= 2 + dremorasSpawned * 2
+    local readyForDremora = level.current >= (dremorasSpawned + 1) * settings:get("BoD_levelsPerEnemy")
     if not readyForDremora or timerStarted then return end
 
     async:newGameTimer(
-        math.random(minDelay, maxDelay),
+        math.random(settings:get("BoD_minDelay"), settings:get("BoD_maxDelay")),
         spawnDremora
     )
     timerStarted = true

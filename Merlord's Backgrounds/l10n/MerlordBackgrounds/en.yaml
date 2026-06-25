@@ -25,3 +25,30 @@ hordeLimit_desc: |
   Set it to 0 to disable hodes.
 
   Requires Follower Detection Util to work.
+
+bloodOfDremora_groupName: Blood of Dremora
+BoD_minDelay_name: Min Delay (hours)
+BoD_maxDelay_name: Max Delay (hours)
+BoD_levelsPerEnemy_name: Spawn Dremora Each X Levels
+BoD_levelsPerEnemy_desc: |
+  Condition for spawning Dremora is:
+
+  Level >= (DremorasSpawned + 1) * X
+
+escapedSlave_groupName: Escaped Slave
+ES_minDelay_name: Min Delay (hours)
+ES_maxDelay_name: Max Delay (hours)
+ES_levelsPerEnemy_name: Spawn Slaver Each X Levels
+ES_levelsPerEnemy_desc: |
+  Condition for spawning Slavers is:
+
+  Level >= SlaversSpawned * X
+
+famedWarrior_groupName: Famed Warrior
+FW_minDelay_name: Min Delay (hours)
+FW_maxDelay_name: Max Delay (hours)
+FW_levelsPerEnemy_name: Spawn Rival Each X Levels
+FW_levelsPerEnemy_desc: |
+  Condition for spawning Rivals is:
+
+  Level >= RivalsSpawned * X

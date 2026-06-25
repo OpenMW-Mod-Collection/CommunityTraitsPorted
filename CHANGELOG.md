@@ -1,5 +1,11 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.9
+
+- Merlord's Backgrounds: Added settings for Blood of Dremora, Escaped Slave and Famed Warrior
+- The Wretched and The Weird: Fixed Blood Mage not getting magicka refunds
+- The Wretched and The Weird: Fixed Wretch's reward screen appearing every reload
+
 ## 1.1.8
 
 - The Wretched and The Weird: Removed Nudist's debug printing

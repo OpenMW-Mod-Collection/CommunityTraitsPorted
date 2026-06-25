@@ -4,18 +4,19 @@ local self = require("openmw.self")
 local core = require("openmw.core")
 local time = require("openmw_aux.time")
 local async = require("openmw.async")
+local storage = require("openmw.storage")
 
 local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").background
 local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
 local raceCheckers = require("scripts.MerlordBackgrounds.utils.raceGroups")
 
+local settings = storage.globalSection("SettingsMerlordBackgrounds_bloodOfDremora")
 local period = time.minute
-local slaversSpawned = 0
-local timerStarted = false
-local minDelay = 1 * time.hour
-local maxDelay = 3 * time.day -- why such a long delay? so it would be sudden, ofc
 local spawnDistance = 300
 local stopTimer
+
+local slaversSpawned = 0
+local timerStarted = false
 
 local slavers = {
     "mer_bg_headhunter_01",
@@ -48,11 +49,11 @@ local function checkLevel()
         return
     end
 
-    local readyForSlaver = self.type.stats.level(self).current > slaversSpawned
+    local readyForSlaver = self.type.stats.level(self).current > slaversSpawned * settings:get("ES_levelsPerEnemy")
     if not readyForSlaver or timerStarted then return end
 
     async:newGameTimer(
-        math.random(minDelay, maxDelay),
+        math.random(settings:get("ES_minDelay"), settings:get("ES_maxDelay")),
         spawnSlaver
     )
     timerStarted = true

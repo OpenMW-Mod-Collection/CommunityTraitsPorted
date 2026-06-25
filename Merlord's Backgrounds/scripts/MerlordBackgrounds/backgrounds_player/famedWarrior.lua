@@ -4,17 +4,14 @@ local self = require("openmw.self")
 local core = require("openmw.core")
 local time = require("openmw_aux.time")
 local async = require("openmw.async")
+local storage = require("openmw.storage")
 
 local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").background
 local swordNameUi = require("scripts.MerlordBackgrounds.ui.famedWarrior")
 local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
 
--- local period = 1
--- local minDelay = 1
--- local maxDelay = 7
+local settings = storage.globalSection("SettingsMerlordBackgrounds_bloodOfDremora")
 local period = time.minute
-local minDelay = 1 * time.hour
-local maxDelay = 3 * time.day -- why such a long delay? so it would be sudden, ofc
 local rivalsSpawned = 0
 local timerStarted = false
 local spawnDistance = 300
@@ -58,11 +55,11 @@ local function checkLevel()
         return
     end
 
-    local readyForRival = self.type.stats.level(self).current > rivalsSpawned
+    local readyForRival = self.type.stats.level(self).current > rivalsSpawned * settings:get("FW_levelsPerEnemy")
     if not readyForRival or timerStarted then return end
 
     async:newGameTimer(
-        math.random(minDelay, maxDelay),
+        math.random(settings:get("FW_minDelay"), settings:get("FW_maxDelay")),
         spawnRival
     )
     timerStarted = true

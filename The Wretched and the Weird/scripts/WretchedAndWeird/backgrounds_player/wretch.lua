@@ -70,8 +70,16 @@ local function uiModeChanged(data)
 end
 
 local function checkLevel()
-    if self.type.stats.level(self).current < 20 then return end
-    -- rewardGiven = true
+    if self.type.stats.level(self).current < 20 then
+        return
+    end
+
+    if rewardGiven then
+        stopLevelCheck()
+        return
+    end
+
+    rewardGiven = true
     rewardWindow.show()
     ---@diagnostic disable-next-line: missing-fields
     I.UI.setMode('Interface', { windows = {} })
