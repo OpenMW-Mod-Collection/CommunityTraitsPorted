@@ -10,7 +10,7 @@ local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").backgro
 local swordNameUi = require("scripts.MerlordBackgrounds.ui.famedWarrior")
 local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
 
-local settings = storage.globalSection("SettingsMerlordBackgrounds_bloodOfDremora")
+local settings = storage.globalSection("SettingsMerlordBackgrounds_famedWarrior")
 local period = time.minute
 local rivalsSpawned = 0
 local timerStarted = false

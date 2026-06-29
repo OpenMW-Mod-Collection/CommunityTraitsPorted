@@ -1,5 +1,9 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.10
+
+- Merlord's Backgrounds: Fixed Escaped Slave and Famed Warrior using wrong settings in the code, which prevented slavers and rivals from spawning
+
 ## 1.1.9
 
 - Merlord's Backgrounds: Added settings for Blood of Dremora, Escaped Slave and Famed Warrior

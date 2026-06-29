@@ -10,7 +10,7 @@ local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").backgro
 local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
 local raceCheckers = require("scripts.MerlordBackgrounds.utils.raceGroups")
 
-local settings = storage.globalSection("SettingsMerlordBackgrounds_bloodOfDremora")
+local settings = storage.globalSection("SettingsMerlordBackgrounds_escapedSlave")
 local period = time.minute
 local spawnDistance = 300
 local stopTimer
