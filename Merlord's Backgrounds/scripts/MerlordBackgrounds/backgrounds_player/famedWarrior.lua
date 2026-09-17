@@ -59,7 +59,10 @@ local function checkLevel()
     if not readyForRival or timerStarted then return end
 
     async:newGameTimer(
-        math.random(settings:get("FW_minDelay"), settings:get("FW_maxDelay")),
+        math.random(
+            settings:get("FW_minDelay") * time.hour,
+            settings:get("FW_maxDelay") * time.hour
+        ),
         spawnRival
     )
     timerStarted = true

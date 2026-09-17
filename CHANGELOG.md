@@ -1,5 +1,11 @@
 # Community Traits Ported (OpenMW)
 
+## 1.1.14
+
+- Merlord's Backgrounds: Finally verified the issue and fixed the Star Child accumulating their Luck bonus
+- Merlord's Backgrounds: Fixed combatant delay being measured in seconds instead of hours
+- Merlord's Backgrounds: Fixed combatant force greeting text being overwritten by other mods
+
 ## 1.1.13
 
 - Sage's Backgrounds: Fixed a typo in Slayer's description

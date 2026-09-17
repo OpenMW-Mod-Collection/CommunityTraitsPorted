@@ -47,19 +47,18 @@ local function checkSurroundings()
         and core.weather.getCurrent(self.cell)
         and core.weather.getCurrent(self.cell).recordId
 
-    if currIsOutsideAndNight == isOutsideAndNight
-        and currWeather == lastWeather
-    then
-        return
-    end
-
     local newLuckBuff = 0
     if currIsOutsideAndNight then
-        newLuckBuff = weatherBuffs[lastWeather] or 0
+        newLuckBuff = weatherBuffs[currWeather] or 0
     end
 
     isOutsideAndNight = currIsOutsideAndNight
-    lastWeather = currIsOutsideAndNight and currWeather or lastWeather
+    lastWeather = currWeather
+
+    if newLuckBuff == currLuckBuff then
+        return
+    end
+
     changeStats(newLuckBuff)
 end
 
@@ -78,6 +77,28 @@ I.CharacterTraits.addTrait {
         changeStats(currLuckBuff)
     end,
     onLoad = function()
+        checkSurroundings()
         time.runRepeatedly(checkSurroundings, period)
     end,
+}
+
+return {
+    engineHandlers = {
+
+        onSave = function()
+            return {
+                currLuckBuff = currLuckBuff,
+                isOutsideAndNight = isOutsideAndNight,
+                lastWeather = lastWeather,
+            }
+        end,
+        onLoad = function(data)
+            data = data or {}
+            currLuckBuff = data.currLuckBuff or currLuckBuff
+            lastWeather = data.lastWeather or lastWeather
+            if data.isOutsideAndNight ~= nil then
+                isOutsideAndNight = data.isOutsideAndNight
+            end
+        end
+    }
 }

@@ -53,7 +53,10 @@ local function checkLevel()
     if not readyForSlaver or timerStarted then return end
 
     async:newGameTimer(
-        math.random(settings:get("ES_minDelay"), settings:get("ES_maxDelay")),
+        math.random(
+            settings:get("ES_minDelay") * time.hour,
+            settings:get("ES_maxDelay") * time.hour
+        ),
         spawnSlaver
     )
     timerStarted = true

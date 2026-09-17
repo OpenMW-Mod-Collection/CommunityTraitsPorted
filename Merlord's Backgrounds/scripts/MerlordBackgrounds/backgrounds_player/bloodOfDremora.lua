@@ -10,7 +10,7 @@ local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").backgro
 local raycast = require("scripts.MerlordBackgrounds.utils.raycast")
 
 local settings = storage.globalSection("SettingsMerlordBackgrounds_bloodOfDremora")
-local period = time.minute
+local period = 1 --time.minute
 local spawnDistance = 300
 local selfName = self.type.records[self.recordId].name
 local level = self.type.stats.level(self)
@@ -58,7 +58,10 @@ local function checkLevel()
     if not readyForDremora or timerStarted then return end
 
     async:newGameTimer(
-        math.random(settings:get("BoD_minDelay"), settings:get("BoD_maxDelay")),
+        math.random(
+            settings:get("BoD_minDelay") * time.hour,
+            settings:get("BoD_maxDelay") * time.hour
+        ),
         spawnDremora
     )
     timerStarted = true
