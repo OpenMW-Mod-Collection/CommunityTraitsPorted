@@ -3,14 +3,6 @@
 PLAYER: scripts/MerlordBackgrounds/player.lua
 GLOBAL: scripts/MerlordBackgrounds/global.lua
 
-# Non-merged traits
-PLAYER: scripts/MerlordBackgrounds/backgrounds_player/bloodOfDremora.lua
-PLAYER: scripts/MerlordBackgrounds/backgrounds_player/escapedSlave.lua
-PLAYER: scripts/MerlordBackgrounds/backgrounds_player/famedWarrior.lua
-PLAYER: scripts/MerlordBackgrounds/backgrounds_player/nightMage.lua
-PLAYER: scripts/MerlordBackgrounds/backgrounds_player/ratKing.lua
-PLAYER: scripts/MerlordBackgrounds/backgrounds_player/starChild.lua
-
 CUSTOM: scripts/MerlordBackgrounds/backgrounds_custom/bloodOfDremora.lua
 CUSTOM: scripts/MerlordBackgrounds/backgrounds_custom/famedWarrior.lua
 

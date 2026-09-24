@@ -1,4 +1,4 @@
-local U = require("scripts.SagesBackgrounds.utils.utils")
+local U = require("scripts.SagesBackgrounds.utils.scriptMerger")
 
 local folderPath = "scripts/SagesBackgrounds/backgrounds_global_merged/"
 

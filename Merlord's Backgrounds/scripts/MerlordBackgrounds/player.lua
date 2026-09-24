@@ -1,6 +1,6 @@
 local I = require("openmw.interfaces")
 
-local U = require("scripts.MerlordBackgrounds.utils.utils")
+local U = require("scripts.MerlordBackgrounds.utils.scriptMerger")
 local deps = require("scripts.MerlordBackgrounds.utils.dependencies")
 
 deps.checkAll("Merlord's Backgrounds", { {

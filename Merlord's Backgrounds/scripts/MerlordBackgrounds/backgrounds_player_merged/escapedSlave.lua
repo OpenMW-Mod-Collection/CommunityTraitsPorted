@@ -74,9 +74,7 @@ I.CharacterTraits.addTrait {
         "Requirements: Khajiit or Argonian only."
     ),
     checkDisabled = function()
-        return not raceCheckers.isKhajiit(self)
-            ---@diagnostic disable-next-line: undefined-field
-            and self.type.records[self.recordId].race ~= "argonian"
+        return not raceCheckers.isKhajiit(self) and not raceCheckers.isArgonian(self)
     end,
     doOnce = function()
         core.sendGlobalEvent(

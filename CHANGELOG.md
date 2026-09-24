@@ -1,5 +1,12 @@
 # Community Traits Ported (OpenMW)
 
+## 2.0
+
+- All traits: Improved script merger, reducing the amount of individual scripts
+- All traits: Added Naga (they are considered Argonians) and Tojay support
+- All traits: Fixed Vortex mod manager incompatibility (please guys stop using it, switch at least to MO2)
+- MTR Cultures: Removed dashes from Cosmopolitan, Magocratic and Martial trait names
+
 ## 1.1.14
 
 - Merlord's Backgrounds: Finally verified the issue and fixed the Star Child accumulating their Luck bonus

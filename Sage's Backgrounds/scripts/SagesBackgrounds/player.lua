@@ -1,6 +1,6 @@
 local I = require("openmw.interfaces")
 
-local U = require("scripts.SagesBackgrounds.utils.utils")
+local U = require("scripts.SagesBackgrounds.utils.scriptMerger")
 local deps = require("scripts.SagesBackgrounds.utils.dependencies")
 
 deps.checkAll("Sage's Backgrounds", { {

@@ -1,6 +1,6 @@
 local I = require("openmw.interfaces")
 
-local U = require("scripts.WretchedAndWeird.utils.utils")
+local U = require("scripts.WretchedAndWeird.utils.scriptMerger")
 local deps = require("scripts.WretchedAndWeird.utils.dependencies")
 
 deps.checkAll("The Wretched and The Weird", { {

@@ -68,11 +68,13 @@ local races = {
     bosmer       = "wood elf",
     -- TR
     reachman     = "t_sky_reachman",
+    naga         = "t_bkm_naga",
     cathay       = "t_els_cathay",
     cathayRaht   = "t_els_cathay-raht",
     ohmes        = "t_els_ohmes",
     ohmesRaht    = "t_els_ohmes-raht",
     suthay       = "t_els_suthay",
+    tojay        = "t_els_tojay",
 }
 
 local function getRaceId(npc)
@@ -1651,7 +1653,7 @@ I.CharacterTraits.addTrait {
         selfSpells:add("mtrLineage_ArgonianPure")
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['argonian']
+        return not raceCheckers.isArgonian(self)
     end
 }
 

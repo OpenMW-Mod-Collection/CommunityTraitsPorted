@@ -3,6 +3,7 @@ local I = require("openmw.interfaces")
 local self = require("openmw.self")
 
 local traitType = require("scripts.Frana5usBackgrounds.utils.traitTypes").background
+local raceCheckers = require("scripts.Frana5usBackgrounds.utils.raceGroups")
 
 I.CharacterTraits.addTrait {
     id = "cutoffHist",
@@ -20,8 +21,7 @@ I.CharacterTraits.addTrait {
         "> You start with a Fortify Acrobatics power"
     ),
     checkDisabled = function()
-        ---@diagnostic disable-next-line: undefined-field
-        return self.type.records[self.recordId].race ~= "argonian"
+        return not raceCheckers.isArgonian(self)
     end,
     doOnce = function()
         -- local selfSkills = self.type.stats.skills

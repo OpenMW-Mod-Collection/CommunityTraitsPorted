@@ -68,11 +68,13 @@ local races = {
     bosmer       = "wood elf",
     -- TR
     reachman     = "t_sky_reachman",
+    naga         = "t_bkm_naga",
     cathay       = "t_els_cathay",
     cathayRaht   = "t_els_cathay-raht",
     ohmes        = "t_els_ohmes",
     ohmesRaht    = "t_els_ohmes-raht",
     suthay       = "t_els_suthay",
+    tojay        = "t_els_tojay",
 }
 
 local function getRaceId(npc)
@@ -270,7 +272,7 @@ I.CharacterTraits.addTrait {
 I.CharacterTraits.addTrait {
     id = "cosmopolitan",
     type = traitType,
-    name = "-Cosmopolitan-",
+    name = "Cosmopolitan",
     description = (
         "Cosmopolitan is a generic culture whose followers see whole of Nirn as a single community. " ..
         "\n" ..
@@ -297,7 +299,7 @@ I.CharacterTraits.addTrait {
 I.CharacterTraits.addTrait {
     id = "magocratic",
     type = traitType,
-    name = "-Magocratic-",
+    name = "Magocratic",
     description = (
         "Magocratic is a generic culture whose followers see pursuing knowledge as a necessary part " ..
         "of life. " ..
@@ -318,7 +320,7 @@ I.CharacterTraits.addTrait {
 I.CharacterTraits.addTrait {
     id = "martial",
     type = traitType,
-    name = "-Martial-",
+    name = "Martial",
     description = (
         "Martial is a generic culture whose followers see warfare as a necessary part of life and " ..
         "way to achieve honor, glory, and valor. " ..

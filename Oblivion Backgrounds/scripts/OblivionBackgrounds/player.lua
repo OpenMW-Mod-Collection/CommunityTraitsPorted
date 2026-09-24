@@ -1,6 +1,6 @@
 local I = require("openmw.interfaces")
 
-local U = require("scripts.OblivionBackgrounds.utils.utils")
+local U = require("scripts.OblivionBackgrounds.utils.scriptMerger")
 local deps = require("scripts.OblivionBackgrounds.utils.dependencies")
 
 deps.checkAll("Oblivion Backgrounds", { {

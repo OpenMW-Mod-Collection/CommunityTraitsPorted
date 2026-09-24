@@ -67,11 +67,13 @@ local races = {
     bosmer       = "wood elf",
     -- TR
     reachman     = "t_sky_reachman",
+    naga         = "t_bkm_naga",
     cathay       = "t_els_cathay",
     cathayRaht   = "t_els_cathay-raht",
     ohmes        = "t_els_ohmes",
     ohmesRaht    = "t_els_ohmes-raht",
     suthay       = "t_els_suthay",
+    tojay        = "t_els_tojay",
 }
 
 local function getRaceId(player)
@@ -437,7 +439,7 @@ I.CharacterTraits.addTrait {
         skills.spear.base     = skills.spear.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['argonian']
+        return not raceCheckers.isArgonian(self)
     end
 }
 
@@ -463,7 +465,7 @@ I.CharacterTraits.addTrait {
         skills.unarmored.base  = skills.unarmored.base - 10
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['argonian']
+        return not raceCheckers.isArgonian(self)
     end
 }
 
@@ -494,7 +496,7 @@ I.CharacterTraits.addTrait {
         skills.speechcraft.base = skills.speechcraft.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['argonian']
+        return not raceCheckers.isArgonian(self)
     end
 }
 
@@ -525,7 +527,7 @@ I.CharacterTraits.addTrait {
         attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['argonian']
+        return not raceCheckers.isArgonian(self)
     end
 }
 
@@ -556,7 +558,7 @@ I.CharacterTraits.addTrait {
         skills.speechcraft.base = skills.speechcraft.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['argonian']
+        return not raceCheckers.isArgonian(self)
     end
 }
 
@@ -587,7 +589,7 @@ I.CharacterTraits.addTrait {
         attrs.endurance.base    = attrs.endurance.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['argonian']
+        return not raceCheckers.isArgonian(self)
     end
 }
 
@@ -618,7 +620,7 @@ I.CharacterTraits.addTrait {
         skills.restoration.base = skills.restoration.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['argonian']
+        return not raceCheckers.isArgonian(self)
     end
 }
 
@@ -649,7 +651,7 @@ I.CharacterTraits.addTrait {
         skills.restoration.base = skills.restoration.base - 5
     end,
     checkDisabled = function()
-        return getRaceId(self) ~= races['argonian']
+        return not raceCheckers.isArgonian(self)
     end
 }
 

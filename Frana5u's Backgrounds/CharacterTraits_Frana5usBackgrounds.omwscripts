@@ -2,5 +2,3 @@ PLAYER: scripts/Frana5usBackgrounds/player.lua
 GLOBAL: scripts/Frana5usBackgrounds/global.lua
 
 CUSTOM: scripts/Frana5usBackgrounds/backgrounds_custom/denyingGreen.lua
-
-PLAYER: scripts/Frana5usBackgrounds/backgrounds_player/akaviriAncestry.lua

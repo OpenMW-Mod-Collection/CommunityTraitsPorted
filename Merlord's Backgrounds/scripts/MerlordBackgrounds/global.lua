@@ -1,4 +1,4 @@
-local U = require("scripts.MerlordBackgrounds.utils.utils")
+local U = require("scripts.MerlordBackgrounds.utils.scriptMerger")
 
 local folderPath = "scripts/MerlordBackgrounds/backgrounds_global_merged/"
 

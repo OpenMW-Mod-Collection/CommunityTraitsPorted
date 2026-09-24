@@ -1,6 +1,6 @@
 local I = require("openmw.interfaces")
 
-local U = require("scripts.Frana5usBackgrounds.utils.utils")
+local U = require("scripts.Frana5usBackgrounds.utils.scriptMerger")
 local deps = require("scripts.Frana5usBackgrounds.utils.dependencies")
 
 deps.checkAll("Frana5u's Backgrounds", { {

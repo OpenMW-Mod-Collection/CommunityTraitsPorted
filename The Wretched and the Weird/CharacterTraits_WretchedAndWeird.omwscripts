@@ -2,6 +2,3 @@ PLAYER: scripts/WretchedAndWeird/player.lua
 GLOBAL: scripts/WretchedAndWeird/global.lua
 
 MENU: scripts/WretchedAndWeird/settingsMenu.lua
-
-PLAYER: scripts/WretchedAndWeird/backgrounds_player/wretch.lua
-PLAYER: scripts/WretchedAndWeird/backgrounds_player/drunk.lua
