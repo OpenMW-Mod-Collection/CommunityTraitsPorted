@@ -1,5 +1,9 @@
 # Community Traits Ported (OpenMW)
 
+## 2.0.1
+
+- Merlord's Backgrounds: Hopefully fixed combatants not giving any rewards if the save was made/reloaded while they were alive
+
 ## 2.0
 
 - All traits: Improved script merger, reducing the amount of individual scripts

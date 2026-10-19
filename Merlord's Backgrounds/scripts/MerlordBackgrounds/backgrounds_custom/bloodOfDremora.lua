@@ -28,6 +28,17 @@ core.sound.playSound3d("dremora scream", self)
 return {
     engineHandlers = {
         onInit = onInit,
+        onSave = function()
+            return {
+                player = player,
+                script = script,
+            }
+        end,
+        onLoad = function(data)
+            data = data or {}
+            player = data.player
+            script = data.script
+        end,
     },
     eventHandlers = {
         Died = onDeath,

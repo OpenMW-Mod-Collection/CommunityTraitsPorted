@@ -11,6 +11,15 @@ end
 return {
     engineHandlers = {
         onInit = onInit,
+        onSave = function()
+            return {
+                player = player,
+            }
+        end,
+        onLoad = function(data)
+            data = data or {}
+            player = data.player
+        end,
     },
     eventHandlers = {
         Died = onDeath,
