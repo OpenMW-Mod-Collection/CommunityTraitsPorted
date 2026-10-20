@@ -123,6 +123,13 @@ Base game treats fortify stat abilities as base stat increases instead of modifi
 
 As a side effect it slightly buffs the background as a whole by un-invalidates your birthsign choice, but I'd say a net positive for the player agency and more natural for the logic of the game systems. Perhaps it even makes your birthsing choice harder by making many more of them way more impactful in the long run.
 
+**Other in-pack balancing tweaks**
+
+- Frana5u's Backgrounds > Ex-Legiionnaire: -20 Willpower > -20 Intelligence
+- MTR Lineages > Dunmer: -10 Willpower > -10 Luck
+
+Considering this a one big trait pack instead of multiple separate ones, it makes sense to do some balancing tweaks for the sake of coherent experience when using them all together.
+
 </details>
 
 ## Installation

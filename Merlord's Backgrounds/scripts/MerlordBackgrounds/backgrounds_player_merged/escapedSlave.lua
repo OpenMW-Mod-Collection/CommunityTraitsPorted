@@ -69,7 +69,7 @@ I.CharacterTraits.addTrait {
     description = (
         "You are the property of a wealthy slaver, but you managed to escape... at least for now. " ..
         "Your former owner does not tolerate such disobedience, and has sent a team of headhunters to " ..
-        "track you down and kill you, lest the other slaves get any flase hope about ever being free.\n" ..
+        "track you down and kill you, lest the other slaves get any false hope about ever being free.\n" ..
         "\n" ..
         "Requirements: Khajiit or Argonian only."
     ),

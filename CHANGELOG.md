@@ -1,5 +1,12 @@
 # Community Traits Ported (OpenMW)
 
+## 2.1
+
+- Merlord's Backgrounds: Fixed a typo in Escaped Slave's description
+- Oblivion Backgrounds: Fixed Shivering Islander's full moon check to finally be accurate
+- Frana5u's Backgrounds: Changed Ex-Legionnaire's -20 Willpower debuff with -20 Intelligence
+- MTR Lineages: Changed Dunmer's -10 Willpower debuff with -10 Luck
+
 ## 2.0.1
 
 - Merlord's Backgrounds: Hopefully fixed combatants not giving any rewards if the save was made/reloaded while they were alive

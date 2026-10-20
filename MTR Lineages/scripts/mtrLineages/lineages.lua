@@ -1831,14 +1831,14 @@ I.CharacterTraits.addTrait {
         "\n" ..
         "\n" ..
         "Bonus to Strength (+5), bonus to Intelligence (+5), bonus to Agility (+5), bonus to Speed " ..
-        "(+5), penalty to Willpower (-10) and penalty to Personality (-10) are traits of those with " ..
+        "(+5), penalty to Luck (-10) and penalty to Personality (-10) are traits of those with " ..
         "Dunmer pureblood. "
     ),
     doOnce = function()
         selfSpells:add("mtrLineage_DunmerPure")
 
         attrs.personality.base = attrs.personality.base - 10
-        attrs.willpower.base   = attrs.willpower.base - 10
+        attrs.luck.base   = attrs.luck.base - 10
     end,
     checkDisabled = function()
         return getRaceId(self) ~= races['dark elf']

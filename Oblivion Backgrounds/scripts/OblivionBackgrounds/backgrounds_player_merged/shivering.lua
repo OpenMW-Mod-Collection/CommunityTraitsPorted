@@ -5,14 +5,6 @@ local time = require("openmw_aux.time")
 
 local traitType = require("scripts.OblivionBackgrounds.utils.traitTypes").background
 
-local period = 1
-
-local function isFullMoon()
-    local currTime = core.getGameTime()
-    local day = math.floor(currTime / (24 * 60 * 60))
-    return day % 8 == 1
-end
-
 I.CharacterTraits.addTrait {
     id = "shivering",
     type = traitType,
@@ -25,7 +17,7 @@ I.CharacterTraits.addTrait {
         "\n" ..
         "+10 Willpower\n" ..
         "-10 Speechcraft\n" ..
-        "+15 pt Sound during the full moon\n" ..
+        "+15 pt Sound on nights of the full moon\n" ..
         "> You start with a Frenzy power"
     ),
     doOnce = function()
@@ -39,19 +31,52 @@ I.CharacterTraits.addTrait {
         selfSpells:add("lack_gg_InfectiousInsanity")
     end,
     onLoad = function()
+        local SPELL_ID = "lack_gg_SheoWhispers"
         local selfSpells = self.type.spells(self)
-        time.runRepeatedly(
-            function()
-                local fullMoon = isFullMoon()
-                if fullMoon and not selfSpells["lack_gg_SheoWhispers"] then
-                    selfSpells:add("lack_gg_SheoWhispers")
-                    self:sendEvent("ShowMessage", { message = "You begin to hear voices..." })
-                elseif not fullMoon and selfSpells["lack_gg_SheoWhispers"] then
-                    selfSpells:remove("lack_gg_SheoWhispers")
-                    self:sendEvent("ShowMessage", { message = "The shadowed moons quiet the voices..." })
+
+        local MOONS = {
+            masser  = { cycleDays = 24, fullPhase = 0 },
+            secunda = { cycleDays = 32, fullPhase = 0 },
+        }
+        local NIGHT_START = 20
+        local NIGHT_END = 6
+        local period = 1
+
+        local function isNight(hour)
+            return hour >= NIGHT_START or hour < NIGHT_END
+        end
+
+        local function isMoonFull(moon, gameTime)
+            local day = math.floor((gameTime - NIGHT_END * time.hour) / time.day)
+            local phase = math.floor((day % moon.cycleDays) / (moon.cycleDays / 8))
+            return phase == moon.fullPhase
+        end
+
+        local function isAnyMoonFull(gameTime)
+            for _, moon in pairs(MOONS) do
+                if isMoonFull(moon, gameTime) then
+                    return true
                 end
-            end,
-            period
-        )
+            end
+            return false
+        end
+
+        local function update()
+            local gameTime = core.getGameTime()
+            local hour = (gameTime / time.hour) % 24
+            local active = isNight(hour) and isAnyMoonFull(gameTime)
+            local hasSpell = selfSpells[SPELL_ID] ~= nil
+
+            if active and not hasSpell then
+                selfSpells:add(SPELL_ID)
+                self:sendEvent("ShowMessage", { message = "You begin to hear voices..." })
+            elseif not active and hasSpell then
+                selfSpells:remove(SPELL_ID)
+                self:sendEvent("ShowMessage", { message = "The shadowed moons quiet the voices..." })
+            end
+        end
+
+        update()
+        time.runRepeatedly(update, period)
     end
 }
