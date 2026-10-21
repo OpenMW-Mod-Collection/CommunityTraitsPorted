@@ -33,7 +33,7 @@ I.CharacterTraits.addTrait {
 local function onConsume(item)
     if not sdOverride then return end
     local res, typ = I.SunsDusk.isConsumable(item)
-    if typ == "cooked" or typ == "database" and not res.isGreenPact then
+    if (typ == "cooked" or typ == "database") and not res.isGreenPact then
         local sd = I.SunsDusk.getSaveData()
         if sd.m_hunger then
             sd.m_hunger.hunger = sd.m_hunger.hunger + res.foodValue * 1.5
