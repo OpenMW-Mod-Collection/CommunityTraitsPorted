@@ -1,5 +1,9 @@
 # Community Traits Ported (OpenMW)
 
+## 2.1.1
+
+- Merlord's Backgrounds: Changed Fencing Master to get his buff when holding lights. Toggleable in the settings
+
 ## 2.1
 
 - Merlord's Backgrounds: Fixed a typo in Escaped Slave's description

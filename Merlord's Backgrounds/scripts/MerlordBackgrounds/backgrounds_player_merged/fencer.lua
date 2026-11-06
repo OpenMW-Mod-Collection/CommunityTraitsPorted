@@ -2,32 +2,41 @@ local I = require("openmw.interfaces")
 local self = require("openmw.self")
 local time = require("openmw_aux.time")
 local types = require("openmw.types")
+local storage = require("openmw.storage")
 
+local settings = storage.globalSection("SettingsMerlordBackgrounds_fencer")
 local traitType = require("scripts.MerlordBackgrounds.utils.traitTypes").background
 
+local function checkFencing()
+    local rightHandItem = self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedRight)
+    local isFencing = rightHandItem
+        and rightHandItem.type == types.Weapon
+        and rightHandItem.type.records[rightHandItem.recordId].type == rightHandItem.type.TYPE.LongBladeOneHand
+
+    local offhandItem = self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedLeft)
+    if offhandItem then
+        if settings:get("ignoreLights") then
+            isFencing = isFencing and not types.Armor.objectIsInstance(offhandItem)
+        else
+            isFencing = false
+        end
+    end
+
+    return isFencing
+end
+
 local period = 1
-local rightHandItem = self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedRight)
-local inFencingStance = rightHandItem
-    and rightHandItem.type == types.Weapon
-    and rightHandItem.type.records[rightHandItem.recordId].type == rightHandItem.type.TYPE.LongBladeOneHand
-    and not self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedLeft)
+local wasFencing = checkFencing()
 
 local function updateLongBlade(amount)
     local longBlade = self.type.stats.skills.longblade(self)
-    local direction = inFencingStance and 1 or -1
+    local direction = wasFencing and 1 or -1
     longBlade.base = longBlade.base + amount * direction
 end
 
 local function checkOffHand()
-    rightHandItem = self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedRight)
-    local currStance = rightHandItem
-        and rightHandItem.type == types.Weapon
-        and rightHandItem.type.records[rightHandItem.recordId].type == rightHandItem.type.TYPE.LongBladeOneHand
-        and not self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedLeft)
-
-    if currStance == inFencingStance then return end
-
-    inFencingStance = not inFencingStance
+    if checkFencing() == wasFencing then return end
+    wasFencing = not wasFencing
     updateLongBlade(20)
 end
 
@@ -41,7 +50,7 @@ I.CharacterTraits.addTrait {
         "+20 Long Blade if your off-hand is free"
     ),
     doOnce = function ()
-        if inFencingStance then
+        if wasFencing then
             updateLongBlade(20)
         end
     end,

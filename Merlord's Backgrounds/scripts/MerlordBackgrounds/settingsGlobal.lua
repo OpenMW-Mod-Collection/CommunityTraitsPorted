@@ -175,3 +175,21 @@ I.Settings.registerGroup {
         },
     }
 }
+
+I.Settings.registerGroup {
+    key = 'SettingsMerlordBackgrounds_fencer',
+    page = 'MerlordBackgrounds',
+    l10n = 'MerlordBackgrounds',
+    name = 'fencer_groupName',
+    permanentStorage = true,
+    order = 1,
+    settings = {
+        {
+            key = 'ignoreLights',
+            name = 'ignoreLights_name',
+            description = 'ignoreLights_desc',
+            renderer = 'checkbox',
+            default = true,
+        },
+    }
+}

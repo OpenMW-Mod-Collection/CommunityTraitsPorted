@@ -52,3 +52,9 @@ FW_levelsPerEnemy_desc: |
   Condition for spawning Rivals is:
 
   Level >= RivalsSpawned * X
+
+fencer_groupName: Fencing Master
+ignoreLights_name: Ignore Lights
+ignoreLights_desc: >
+  If enabled, the script will ignore non-shields in the offhand
+  when checking the condition for Long Blade buff.
