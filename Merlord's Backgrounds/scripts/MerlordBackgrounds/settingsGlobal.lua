@@ -189,7 +189,7 @@ I.Settings.registerGroup {
             name = 'ignoreLights_name',
             description = 'ignoreLights_desc',
             renderer = 'checkbox',
-            default = true,
+            default = false,
         },
     }
 }
