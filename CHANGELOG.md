@@ -2,7 +2,7 @@
 
 ## 2.1.1
 
-- Merlord's Backgrounds: Added a setting to allow Fencing Master to recieve his buff when holding non-shield item in the offhand. Off by default
+- Merlord's Backgrounds: Added a setting to allow Fencing Master to receive his buff when holding non-shield item in the offhand. Off by default
 
 ## 2.1
 
